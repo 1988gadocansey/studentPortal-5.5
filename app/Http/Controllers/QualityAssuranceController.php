@@ -25,6 +25,14 @@ class QualityAssuranceController extends Controller
 
     }
 
+    public function getLevel($level){
+
+        $levels=["100H"=>"200H","200H"=>"300H","100BTT"=>"200BT","100NT"=>"200NT","500MT"=>"600MT"];
+        return array_search($level,$levels);
+
+    }
+
+
     public function getCourse(Request $request, SystemController $sys)
     {
 
@@ -37,6 +45,8 @@ class QualityAssuranceController extends Controller
         $year = $data[0];
 
         $sem = $data[1];
+
+        $level=$this->getLevel($request->level);
 
 
         /*if($sem==1){
@@ -52,7 +62,7 @@ class QualityAssuranceController extends Controller
             ->where("tpoly_mounted_courses.LECTURER", $request->lecturer_id)
             ->where("tpoly_mounted_courses.COURSE_SEMESTER", $sem)
             ->where("tpoly_mounted_courses.COURSE_YEAR", $year)
-            ->where("tpoly_mounted_courses.COURSE_LEVEL", $request->level)
+            ->where("tpoly_mounted_courses.COURSE_LEVEL", $level)
             ->where("tpoly_mounted_courses.PROGRAMME", $programme)
             ->pluck("tpoly_courses.COURSE_NAME", "tpoly_mounted_courses.COURSE_CODE");
 
@@ -62,6 +72,7 @@ class QualityAssuranceController extends Controller
 
     public function showForm(Request $request, SystemController $sys)
     {
+       // dd($this->getLevel("200H"));
 
        /* if ($request->ip() != "41.242.137.162") {
             return redirect("/dashboard")->with("error", "Please go to the E-library or ICT Center at BU to do Lecturer Assessment. NB you can only do lecturer assessment at the designated centers (BU,ICT Center,E-Library");
@@ -163,8 +174,7 @@ class QualityAssuranceController extends Controller
         $course = $request->session()->pull('course');
         $level = $request->session()->pull('level');
 
-        \DB::beginTransaction();
-        try {
+
 
             $courseID = $sys->getCourseByIDAQ($course, $program);
             if (!empty($course)) {
@@ -260,7 +270,7 @@ class QualityAssuranceController extends Controller
 
 
                     $data->save();
-                    \DB::commit();
+                   // \DB::commit();
                     $request->session()->forget('lecturer');
                     $request->session()->forget('course');
                     $request->session()->forget('level');
@@ -280,7 +290,7 @@ class QualityAssuranceController extends Controller
                 if ($totalDone >= 5) {
                     @Models\StudentModel::where("INDEXNO", $indexno)->update(array("QUALITY_ASSURANCE" => 1));
                 }
-                \DB::commit();
+                //\DB::commit();
                 // return response()->json(['status' => 'success', 'message' => ' Data sent to Quality Assurance Office.. Going to print page... ']);
                 return redirect("/lecturer/assessment")->with("success", "Data sent to Quality Assurance Office");
             } else {
@@ -291,11 +301,7 @@ class QualityAssuranceController extends Controller
 
 
             }
-        } catch (\Exception $e) {
-            \DB::rollback();
-
-        }
-
+        
     }
 
     public function printForm(Request $request, SystemController $sys)

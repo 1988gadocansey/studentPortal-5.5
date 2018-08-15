@@ -327,6 +327,10 @@ class SystemController extends Controller
 
     public function getLectureListQA($program,$level) {
 
+        $levels=["100H"=>"200H","200H"=>"300H","100BTT"=>"200BT","100NT"=>"200NT","500MT"=>"600MT"];
+       $level=array_search($level,$levels);
+
+
             $lecturer=  \DB::table('tpoly_mounted_courses')
                 ->join('tpoly_workers', function($join)
                 {

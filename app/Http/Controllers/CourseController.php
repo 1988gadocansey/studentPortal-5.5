@@ -375,10 +375,10 @@ class CourseController extends Controller
         <td>
         <table width="826px" style="margin-left:18px" height="133">
             <tr>
-                <td class="uk-text-danger uk-text-left" colspan="3"><blinks>Contact TPConnect Office for any issue regarding this results. </blinks></td>
+                <td class="uk-text-danger uk-text-left" colspan="3"><blinks>Contact your HOD for any assistance. </blinks></td>
             </tr>
             <tr>
-                <td colspan="3" align='left'> <img src="<?php echo url('public/assets/img/academic.jpg')?>" style='width: 826px;height: auto;margin-bottom: 10px;'/></td>
+                <td colspan="3" align='left'> <img src="<?php echo url('public/assets/img/academic4.jpg')?>" style='width: 826px;height: auto;margin-bottom: 10px;'/></td>
 
             </tr>
             <tr>
@@ -648,7 +648,7 @@ class CourseController extends Controller
 
         }
         else{
-            return redirect("/dashboard")->with("error", "Course registration closed. Contact 0246091283 / 0505284060");
+            return redirect("/dashboard")->with("error", "Course registration closed. Contact your HOD");
 
         }
     }
