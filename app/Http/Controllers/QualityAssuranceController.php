@@ -27,7 +27,7 @@ class QualityAssuranceController extends Controller
 
     public function getLevel($level){
 
-        $levels=["100H"=>"200H","200H"=>"300H","100BTT"=>"200BT","100NT"=>"200NT","500MT"=>"600MT"];
+        $levels=["100H"=>"200H","200H"=>"300H","100BTT"=>"200BTT","100NT"=>"200NT","500MT"=>"600MT","100BT"=>"200BT"];
         return array_search($level,$levels);
 
     }
@@ -74,9 +74,9 @@ class QualityAssuranceController extends Controller
     {
        // dd($this->getLevel("200H"));
 
-       /* if ($request->ip() != "41.242.137.162") {
+        if ($request->ip() != "41.242.137.162") {
             return redirect("/dashboard")->with("error", "Please go to the E-library or ICT Center at BU to do Lecturer Assessment. NB you can only do lecturer assessment at the designated centers (BU,ICT Center,E-Library");
-        }*/
+        }
         $studentSessionId = @\Auth::user()->username;
         $programme = @\Auth::user()->programme;
         $level = @\Auth::user()->level;
@@ -301,7 +301,7 @@ class QualityAssuranceController extends Controller
 
 
             }
-        
+
     }
 
     public function printForm(Request $request, SystemController $sys)
