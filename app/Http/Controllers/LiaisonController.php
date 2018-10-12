@@ -100,6 +100,9 @@ class LiaisonController extends Controller
             $data->level = $level;
             $sql = $data->save();
 
+            Models\StudentModel::where("INDEXNO",@\Auth::user()->username)->orWhere("STNO",@\Auth::user()->username)
+                ->update(array("LIAISON"=>1));
+
         } else {
             $sql = Models\LiaisonModel::where("indexno", $indexno)
                 ->update(array(
@@ -117,6 +120,8 @@ class LiaisonController extends Controller
 
         }
         if ($sql) {
+
+
 
             return response()->json(['status' => 'success', 'message' => ' Data sent to Industrial Liaison Office.. Going to print page... ']);
 
