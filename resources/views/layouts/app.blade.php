@@ -195,13 +195,21 @@
         <div class="md-top-bar">
             <ul id="menu_top" class="uk-clearfix">
                 <li class="uk-hidden-small"><a href='{!! url("/dashboard") !!}'><i class="material-icons">&#xE88A;</i><span>Home</span></a></li>
-                
-                
+
                 <li data-uk-dropdown class="uk-hidden-small">
-                    <a href="#"><i class="sidebar-menu-icon material-icons md-18">attach_file</i><span>File</span></a>
+                    <a href="#">Quality Assurance</a>
                     <div class="uk-dropdown uk-dropdown-scrollable">
                         <ul class="uk-nav uk-nav-dropdown">
-                            <li><a href='{!! url("/liaison/form/attachment") !!}'>Attachement form</a></li>
+                             <li><a href='{!! url("lecturer/assessment") !!}'>Assess Lecturer</a></li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li data-uk-dropdown class="uk-hidden-small">
+                    <a href="#">Industrial Liaison</a>
+                    <div class="uk-dropdown uk-dropdown-scrollable">
+                        <ul class="uk-nav uk-nav-dropdown">
+                            <li><a href='{!! url("/liaison/form/attachment") !!}'>Print attachment letter</a></li>
                             <li><a href='{!! url("/liaison/form/assumption") !!}'>Assumption of duty form</a></li>
                             <li><a href='{!! url("lecturer/assessment") !!}'>Assess Lecturer</a></li>
                          </ul>

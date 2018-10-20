@@ -96,32 +96,6 @@
 
         
 
-@if($studentStatus!='In school')
-
-    
-
-<div class="md-card">
-
-    <div class="md-card-content">
-
-
-
-        <p class='uk-alert uk-alert-danger'> Status changed to "In school". !</p>
-
-        <a href="{{ url('/dashboard') }}">Go back</a>
-
-    </div>
-
-</div>
-
-@endif
-
-
-
-
-
-
-
 <h5 class="md-card-toolbar-heading-text ">
 
                                <div class="">Mounted Courses for {{$year }} Academic year {{$sem}} semester </a></div>

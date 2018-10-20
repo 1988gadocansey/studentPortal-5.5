@@ -74,9 +74,9 @@ class QualityAssuranceController extends Controller
     {
        // dd($this->getLevel("200H"));
 
-        if ($request->ip() != "41.242.137.162") {
+       /* if ($request->ip() != "41.242.137.162") {
             return redirect("/dashboard")->with("error", "Please go to the E-library or ICT Center at BU to do Lecturer Assessment. NB you can only do lecturer assessment at the designated centers (BU,ICT Center,E-Library");
-        }
+        }*/
         $studentSessionId = @\Auth::user()->username;
         $programme = @\Auth::user()->programme;
         $level = @\Auth::user()->level;

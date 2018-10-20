@@ -22,6 +22,7 @@
   |
  */
 
+Route::get('liaison/form/attachment/print/{indexno}', 'APIController@printAttachmentForm')->where('indexno', '(.*)');
 Route::group(['middleware' => ['web']], function () {
     Auth::routes();
     Route::get('/', function () {

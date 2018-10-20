@@ -113,14 +113,14 @@
 
                                         </div>
                                     </div>
-                                    <div class="parsley-row">
+                                  {{--  <div class="parsley-row">
                                         <div class="uk-input-group">
 
                                             <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Company Supervisor :</label><input type="text" id="csuper" name="csuper"  required=""v-form-ctrl  class="md-input"    v-model="csuper"      /><span class="md-input-bar"></span></div>
                                             <p class="uk-text-danger uk-text-small " v-if="updateForm.csuper.$error.required" >Company supervisor is required</p>
 
                                         </div>
-                                    </div>
+                                    </div>--}}
 
                                     <div class="parsley-row">
                                         <div class="uk-input-group">

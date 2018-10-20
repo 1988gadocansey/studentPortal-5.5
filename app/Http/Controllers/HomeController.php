@@ -21,7 +21,6 @@ class HomeController extends Controller
         $date=new \Datetime();
         @User::where("id", $user)->update(array("last_sign_in"=>$date));
         $agent = new Agent();
-
         /*$agent->is('Windows');
         $agent->is('Firefox');
         $agent->is('iPhone');
@@ -50,10 +49,8 @@ class HomeController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function index(Request $request,SystemController $sys)
+    public function index(SystemController $sys)
     {
-
-        dd($request);
         
 
     //$newIndex=$sys->assignIndex(@\Auth::user()->programme);

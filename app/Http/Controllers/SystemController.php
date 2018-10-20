@@ -44,7 +44,7 @@ class SystemController extends Controller
 
     {
 
-        $this->middleware('auth');
+       // $this->middleware('auth');
 
 
 
@@ -881,6 +881,8 @@ class SystemController extends Controller
         return  @$student[0]->STNO;
     }
 
+
+
     public function getTotalPayment($student, $yearr)
     {
         //$sys = new SystemController();
@@ -888,11 +890,11 @@ class SystemController extends Controller
         
             $yearr = $array[0]->YEAR;
         
-        
+        $id = $this->getStudentIDfromIndexno($student);
 
         $appNo = $this->getStudentAppnofromIndexno($student);
 
-        $fee = \DB::table('tpoly_feedetails')->where('YEAR', '=', $yearr)->where('INDEXNO', $student)->orWhere('INDEXNO', $appNo)->where('YEAR', '=', $yearr)->sum('AMOUNT');
+        $fee = \DB::table('tpoly_feedetails')->where('YEAR', '=', $yearr)->where('STUDENT', $id)->sum('AMOUNT');
 
         //$fee2 = \DB::table('tpoly_feedetails')->where('YEAR', '=', $yearr)->where('INDEXNO', $appNo)->sum('AMOUNT');
         //$fee = $fee1+$fee2;

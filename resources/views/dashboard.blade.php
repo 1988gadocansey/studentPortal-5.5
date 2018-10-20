@@ -241,6 +241,29 @@
                     <div class="uk-clearfix md-card-overlay-header">
                         <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
                         <h3 class="uk-text-center uk-text-upper">
+                            ASSUMPTION OF DUTY 
+                        </h3>
+                    </div>
+                    <p>Click to print assumption of duty form</p>
+                    <a href="{{url('/liaison/form/assumption')}}" class="md-btn md-btn-primary">Click to go</a>
+                </div>
+            </div>
+            </a>
+        </div>
+
+
+
+
+ <div>
+            <a href="{{url('/lecturer/assessment')}}">
+            <div class="md-card md-card-hover md-card-overlay">
+                <div class="md-card-content">
+                     <img src="{{url('public/dashboard/results.png')}}"/>
+                </div>
+                <div class="md-card-overlay-content">
+                    <div class="uk-clearfix md-card-overlay-header">
+                        <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                        <h3 class="uk-text-center uk-text-upper">
                             LECTURER ASSESSMENT
                         </h3>
                     </div>
@@ -251,26 +274,6 @@
             </a>
         </div>
 
-
-
-        {{--<div>
-            <div class="md-card md-card-hover md-card-overlay">
-                <div class="md-card-content">
-                    <div class="epc_chart" data-percent="37" data-bar-color="#607d8b">
-                        <span class="epc_chart_icon"><i class="material-icons">&#xE7FE;</i></span>
-                    </div>
-                </div>
-                <div class="md-card-overlay-content">
-                    <div class="uk-clearfix md-card-overlay-header">
-                        <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
-                        <h3>
-                         View Profile
-                        </h3>
-                    </div>
-                    View and update your profile
-                </div>
-            </div>
-        </div>--}}
 
 
     </div>

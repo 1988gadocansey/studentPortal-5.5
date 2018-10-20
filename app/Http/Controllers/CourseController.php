@@ -48,9 +48,7 @@ class CourseController extends Controller
 
             $qa = @$sql->QUALITY_ASSURANCE;
 
-            if ($qa == 0) {
-                return redirect('/lecturer/assessment');
-            }
+            
 
             $regis = @$sql->REGISTERED;
 
@@ -62,11 +60,20 @@ class CourseController extends Controller
             $semT=$array[0]->SEMESTER;
             $yearT=$array[0]->YEAR;
             if ($semT == 1) {
-                if($sql->BALANCE>0){
+                if ($qa == 0 &&( @$sql->LEVEL != '100H' && @$sql->LEVEL != '100NT' && @$sql->LEVEL != '500MT' && @$sql->LEVEL != '100BTT' && @$sql->LEVEL != '100BT')) {
+                return redirect('/lecturer/assessment');
+            }
+            if($sql->BALANCE>0){
+                if($sql->PAID<=0.99*$sql->BALANCE){
                 return redirect('/dashboard')->with("error","check fee status");
-            } 
+            }//   if($sql->BALANCE>0){
+            //    return redirect('/dashboard')->with("error","check fee status");
+                            } 
             }
             elseif($semT == 2) {
+                if ($qa == 0) {
+                return redirect('/lecturer/assessment');
+            }
                 if($sql->PAID<=0.99*$sql->BILLS){
                 return redirect('/dashboard')->with("error","check fee status");
             }
@@ -448,21 +455,9 @@ class CourseController extends Controller
             if ($request->isMethod("get")) {
                 $studentRecords = @Models\StudentModel::where("INDEXNO", $student)->where("ALLOW_REGISTER", "1")->first();
                 $qa = @$studentRecords->QUALITY_ASSURANCE;
+                //$alumni = @$studentRecords->STATUS;
 
-                if ($sem == 1) {
-                if ($studentRecords->LEVEL == '200H' || $studentRecords->LEVEL == '300H' || $studentRecords->LEVEL == "200BTT") {
-                    if ($qa == 0) {
-                        return redirect('lecturer/assessment');
-                    }
-                }
-            }
-            elseif($sem == 2) {
-                if ($studentRecords->LEVEL == '100H'|| $studentRecords->LEVEL == '200H' || $studentRecords->LEVEL == '300H' || $studentRecords->LEVEL == "200BTT" || $studentRecords->LEVEL == '100BTT') {
-                    if ($qa == 0) {
-                        return redirect('lecturer/assessment');
-                    }
-                }
-            }
+                
                 
                 if (!empty($studentRecords)) {
                     $owing = @$studentRecords->BILL_OWING;
@@ -478,13 +473,28 @@ class CourseController extends Controller
 
                     $courseElective = @Models\MountedCourseModel::query()->where('COURSE_SEMESTER', $sem)->where('COURSE_LEVEL', $studentDetail->LEVEL)->where('PROGRAMME', $studentDetail->PROGRAMMECODE)->where('COURSE_YEAR', $year)->where('COURSE_TYPE', 'Elective')->groupBy('COURSE_CODE')->paginate(100);
                     $courseResit = @Models\MountedCourseModel::query()->where('COURSE_SEMESTER', $sem)->where('COURSE_LEVEL', $studentDetail->LEVEL)->where('PROGRAMME', $studentDetail->PROGRAMMECODE)->where('COURSE_YEAR', $year)->where('COURSE_TYPE', 'Resit')->paginate(100);
-                    $paid = Models\FeePaymentModel::where("INDEXNO", $studentRecords->INDEXNO)
+                    $paid = Models\FeePaymentModel::where("STUDENT", $studentRecords->ID)
                         ->where("YEAR", $year)
                         //->where("SEMESTER", $sem)
                         ->sum("AMOUNT");
                     $balance = $bill - $paid;
 
-                    if ($paid >= 0.99*$bill or $studentRecords->PROTOCOL == '1' or $studentRecords->vw == '1') {
+                    if ($studentStatus != 'In school') {
+                    redirect("/dashboard")->with("error", "Contact your HOD. Your status is " . $studentStatus);
+                    //dd(k);
+                    }
+                    if ($studentStatus != 'In school') {
+                    
+                    dd("Contact your HOD. Your status is " . $studentStatus);
+                    }
+
+                    if ($sem == 1) {
+                if ($studentRecords->LEVEL == '200H' || $studentRecords->LEVEL == '300H' || $studentRecords->LEVEL == "200BTT" || $studentRecords->LEVEL == "600MT") {
+                    if ($qa == 0) {
+                        return redirect('lecturer/assessment');
+                    }
+                }
+                if ($paid >= 0.5*$bill or $studentRecords->PROTOCOL == '1') {
                         return view('courses.register')
                             ->with('year', $year)
                             ->with('sem', $sem)
@@ -499,8 +509,36 @@ class CourseController extends Controller
                             ->with('qa', $qa)
                             ->with('studentStatus', $studentStatus);
                     } else {
-                        dd("You owe school fees contact finance. Amount is GHS" . $balance);
+                        redirect("/dashboard")->with("error", "You owe GHS" . $balance);
                     }
+
+            }
+            elseif($sem == 2) {
+                
+                    if ($qa == 0) {
+                        return redirect('lecturer/assessment');
+                    }
+
+                    if ($paid >= 0.99*$bill or $studentRecords->PROTOCOL == '1') {
+                        return view('courses.register')
+                            ->with('year', $year)
+                            ->with('sem', $sem)
+                            ->with('data', $studentDetail)
+                            ->with('course', $courseCore)
+                            ->with('courseElective', $courseElective)
+                            ->with('courseResit', $courseResit)
+                            ->with('owing', $owing)
+                            ->with('bill', $bill)
+                            ->with('paid', $paid)
+                            ->with('register', $register)
+                            ->with('qa', $qa)
+                            ->with('studentStatus', $studentStatus);
+                    } else {
+                        redirect("/dashboard")->with("error", "You owe GHS" . $balance);
+                    }
+                
+            }
+                    
 
 
                 } else {
@@ -557,7 +595,7 @@ class CourseController extends Controller
                             }
 
                         }
-                        $oldHours = Models\StudentModel::where("INDEXNO", $student)->where('STATUS', '=', 'In school')->orWhere('STATUS', '=', 'Admitted')->first();
+                        $oldHours = Models\StudentModel::where("INDEXNO", $student)->where('STATUS', '=', 'In school')->orWhere('STATUS', '=', 'Admitted')->where("INDEXNO", $student)->first();
                         $durationCredit = $sys->getProgrammeMinCredit(@$oldHours->PROGRAMMECODE);
 
                         $newHours = @$oldHours->TOTAL_CREDIT_DONE + $totalHours;

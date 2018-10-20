@@ -55,7 +55,7 @@
 
                 <table border='0' style="margin-top: -59px">
                     <tr>
-                        <td><img style="width:1000px;height: auto" src='{{url("public/assets/img/attachment.jpg")}}'
+                        <td><img style="width:1000px;height: auto" src='{{url("public/assets/img/liaison.png")}}'
                                  style="" class="image-responsive"/>
 
 
@@ -64,7 +64,11 @@
                 </table>
 
 
-                    <div align="left" style="margin-left:0; font-size:14px; font-weight:bold;"><?php   echo $help->get_letter_code(substr($data->studentDetials->PROGRAMMECODE, 0, 1), $data->level);  ?></div>
+                    <div align="left" style="margin-left:0; font-size:14px; font-weight:bold;">
+                        <?php   //echo $help->get_letter_code(substr($data->studentDetials->PROGRAMMECODE, 0, 1), $data->level);  ?>
+
+                        TTU/ILO/LAP/VOL.2/12
+                    </div>
 
 
 

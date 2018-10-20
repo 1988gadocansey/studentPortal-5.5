@@ -14,9 +14,12 @@
 
             <table>
                 <tr>
-                    <td><img style="width:1000px;height: auto" src='{{url("public/assets/img/assumption.jpg")}}'
+                    <td><img style="width:1000px;height: auto" src='{{url("public/assets/img/liaison.png")}}'
                              style="" class="image-responsive"/>
                     </td>
+                </tr>
+                <tr>
+                    <td><b>ASSUMPTION OF DUTY FORM</b></td>
                 </tr>
             </table>
 
@@ -79,7 +82,7 @@
                     <p></p>
                     <div style='text-align:justify;  '><b>NB</b> This form must be completed and forwarded to the <b>Industrial Liaison Officer, Takoradi Technical University, Box 256, Takoradi</b>, by student concerned <b>within seven days</b> of assumption of duty.</div>
                     <p></p>
-                    <div style="  font-weight:bold; text-align:justify">OFFICE DIRECT LINE 03120-22643    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;   EMAIL: iliaison.tpoly@yahoo.com</div>
+                    <div style="  font-weight:bold; text-align:justify">OFFICE DIRECT LINE 03120-22643    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;   EMAIL: liaison@ttu.edu.gh</div>
 
                     </p>
 

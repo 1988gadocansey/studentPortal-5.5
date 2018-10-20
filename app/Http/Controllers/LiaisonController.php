@@ -100,8 +100,7 @@ class LiaisonController extends Controller
             $data->level = $level;
             $sql = $data->save();
 
-            Models\StudentModel::where("INDEXNO",@\Auth::user()->username)->orWhere("STNO",@\Auth::user()->username)
-                ->update(array("LIAISON"=>1));
+
 
         } else {
             $sql = Models\LiaisonModel::where("indexno", $indexno)
@@ -121,7 +120,8 @@ class LiaisonController extends Controller
         }
         if ($sql) {
 
-
+            Models\StudentModel::where("INDEXNO",$indexno)->orWhere("STNO",$indexno)
+                ->update(array("LIAISON"=>1));
 
             return response()->json(['status' => 'success', 'message' => ' Data sent to Industrial Liaison Office.. Going to print page... ']);
 
@@ -147,7 +147,7 @@ class LiaisonController extends Controller
             $programme = $sys->getProgramList();
             $zone = $sys->getZones();
             $address = $sys->getAddress();
-            return view('liaison.attachmentPrint')->with('data', $query)
+            return view('liaison.assumptionLetter')->with('data', $query)
                 ->with('programme', $programme)
                 ->with('zone', $zone)
                 ->with('address', $address);
@@ -157,6 +157,8 @@ class LiaisonController extends Controller
 
         }
     }
+
+    
 
 
 }

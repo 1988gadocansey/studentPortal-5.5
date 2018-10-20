@@ -264,7 +264,7 @@ public function gad()
                  "GUARDIAN_PHONE"=>$gphone,  
                  "GUARDIAN_OCCUPATION"=>$goccupation,
                  "DISABILITY"=>$disability,
-                 "STATUS"=>"In School",
+                 "STATUS"=>"In school",
                  "NHIS"=>$nhis,
                  "STUDENT_TYPE"=>$type,
                  "TYPE"=>$category,
