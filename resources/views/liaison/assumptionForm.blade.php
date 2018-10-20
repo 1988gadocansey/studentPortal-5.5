@@ -40,7 +40,7 @@
                                 </li>
                                 <li role="tab" class="payment_header disabled" aria-disabled="true"   v-bind:class="{ 'error' : in_payment_section}" >
                                     <a aria-controls="wizard_advanced-p-1" href="#wizard_advanced-h-1" id="wizard_advanced-t-1">
-                                        <span class="number">2</span> <span class="title">Terms of Aggreement</span>
+                                        <span class="number">2</span> <span class="title">Terms of Agreement</span>
                                     </a>
                                 </li>
 

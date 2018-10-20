@@ -21,5 +21,9 @@ class StudentModel extends Model
     public function programme(){
         return $this->belongsTo('App\Models\ProgrammeModel', "PROGRAMMECODE","PROGRAMMECODE");
     }
+
+    public function levels(){
+        return $this->belongsTo('App\Models\LevelModel', "LEVEL","name");
+    }
     
 }

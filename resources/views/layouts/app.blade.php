@@ -211,7 +211,7 @@
                         <ul class="uk-nav uk-nav-dropdown">
                             <li><a href='{!! url("/liaison/form/attachment") !!}'>Print attachment letter</a></li>
                             <li><a href='{!! url("/liaison/form/assumption") !!}'>Assumption of duty form</a></li>
-                            <li><a href='{!! url("lecturer/assessment") !!}'>Assess Lecturer</a></li>
+
                          </ul>
                     </div>
                 </li>

@@ -82,7 +82,20 @@
                                 //variable declaraions
                                 $programmename = $data->studentDetials->PROGRAMMECODE;
                                 $level = substr($data->level,0,1);
-                                $studentLevel =  $data->level ;
+                                $studentLevel =  substr($data->level,0,1) ;
+                                if($studentLevel==1){
+                                    $studentLevel="(Year 1)";
+                                }
+                                elseif($studentLevel==2){
+                                    $studentLevel="(Year 2)";
+                                }
+                                elseif($studentLevel==3){
+                                    $studentLevel="(Year 3)";
+                                }
+                                elseif($studentLevel==4){
+                                    $studentLevel="(Year 4)";
+                                }
+
 
                                 ?>
 
@@ -93,7 +106,7 @@
                             <b><?php echo strtoupper($data->addressDetails->addresses); ?></b><br>
                             <b><?php echo strtoupper($data->company_name);?></b><br>
 
-                            <b><?php echo strtoupper($data->company_location);?> </b><br>
+
                             <b></b>
 
 

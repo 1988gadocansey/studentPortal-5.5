@@ -40,7 +40,7 @@
                                 </li>
                                 <li role="tab" class="payment_header disabled" aria-disabled="true"   v-bind:class="{ 'error' : in_payment_section}" >
                                     <a aria-controls="wizard_advanced-p-1" href="#wizard_advanced-h-1" id="wizard_advanced-t-1">
-                                        <span class="number">2</span> <span class="title">Terms of Aggreement</span>
+                                        <span class="number">2</span> <span class="title">Terms of Agreement</span>
                                     </a>
                                 </li>
 
@@ -63,13 +63,13 @@
                                         </div>
                                     </div>
 
-                                    <div class="parsley-row">
+                                    {{--<div class="parsley-row">
                                         <div class="uk-input-group">
 
                                             <div class="md-input-wrapper md-input-filled"><label for="wizard_referer">Company Phone N<u>o</u> :</label><input type="text" id="cphone" name="cphone" class="md-input" data-parsley-type="digits" minlength="10"  required="required"   maxlength="10"   pattern='^[0-9]{10}$'  v-model="cphone"  v-form-ctrl><span class="md-input-bar"></span></div>
                                             <p  class=" uk-text-danger uk-text-small  "   v-if="updateForm.cphone.$invalid">Please enter a valid phone number of 10 digits</p>
                                         </div>
-                                    </div>
+                                    </div>--}}
 
                                     <div class="parsley-row">
                                         <div class="uk-input-group">
@@ -79,7 +79,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="parsley-row">
+                                  {{--  <div class="parsley-row">
                                         <div class="uk-input-group">
 
                                             <label for="">Company Zone :</label>
@@ -90,21 +90,21 @@
                                             </div>
                                             <p class="uk-text-danger uk-text-small"  v-if="updateForm.czone.$error.required">Zone is required</p>
                                         </div>
-                                    </div>
+                                    </div>--}}
 
                                 </div>
 
                                 <div data-uk-grid-margin="" class="uk-grid uk-grid-width-medium-1-4 uk-grid-width-large-1-4">
 
 
-                                    <div class="parsley-row">
+                                    {{--<div class="parsley-row">
                                         <div class="uk-input-group">
 
                                             <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Company Exact Location :</label><input type="text" id="clocation" name="clocation"  required=""v-form-ctrl  class="md-input"    v-model="clocation"      /><span class="md-input-bar"></span></div>
                                             <p class="uk-text-danger uk-text-small " v-if="updateForm.clocation.$error.required" >Location   is required</p>
 
                                         </div>
-                                    </div>
+                                    </div>--}}
                                     <div class="parsley-row">
                                         <div class="uk-input-group">
 
@@ -135,13 +135,13 @@
                                         </div>
                                     </div>
 
-                                    <div class="parsley-row">
+                                   {{-- <div class="parsley-row">
                                         <div class="uk-input-group">
 
                                             <div class="md-input-wrapper md-input-filled"><label for="wizard_twitter">Date of duty :</label><input type="text" name="cdate" id="cdate" class="md-input cdate" data-uk-datepicker="{format:'DD/MM/YYYY'}" required="required"  v-model="cdate"  v-form-ctrl   ><span class="md-input-bar"></span></div>
                                             <p class="uk-text-danger uk-text-small " v-if="updateForm.cdate.$error.required" >Date duty is required</p>
                                         </div>
-                                    </div>
+                                    </div>--}}
 
                                 </div>
 

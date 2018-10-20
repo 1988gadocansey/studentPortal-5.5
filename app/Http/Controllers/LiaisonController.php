@@ -56,10 +56,9 @@ class LiaisonController extends Controller
     {
         $this->validate($request, [
             'cname' => 'required',
-            'cphone' => 'required|numeric',
-            'clocation' => 'required',
+
             'caddress' => 'required',
-            'czone' => 'required',
+
 
         ]);
         $array = $sys->getSemYear();
@@ -85,16 +84,14 @@ class LiaisonController extends Controller
         if (empty($checkQuery)) {
             $data = new Models\LiaisonModel();
             $data->company_name = ucwords($cname);
-            $data->company_phone = $cphone;
-            $data->company_location = ucwords($clocation);
-            $data->company_subzone = ucwords($czone);
+
             $data->company_address = ucwords($caddress);
-            $data->company_supervisor = ucwords($csuper);
+
             $data->company_email = ucwords($cemail);
             $data->company_address_to = ucwords($cto);
             $data->terms = $term;
             $data->status = 0;
-            $data->date_duty = $cdate;
+
             $data->indexno = $indexno;
             $data->year = $year;
             $data->level = $level;
@@ -106,14 +103,11 @@ class LiaisonController extends Controller
             $sql = Models\LiaisonModel::where("indexno", $indexno)
                 ->update(array(
                     "company_name" => ucwords($cname),
-                    "company_phone" => $cphone,
-                    "company_location" => ucwords($clocation),
+
                     "company_address_to" => ucwords($cto),
                     "company_email" => ucwords($cemail),
                     "company_address" => ucwords($caddress),
-                    "company_supervisor" => ucwords($csuper),
-                    "company_subzone" => ucwords($czone),
-                    "date_duty" => $cdate,
+
 
                 ));
 
@@ -147,7 +141,7 @@ class LiaisonController extends Controller
             $programme = $sys->getProgramList();
             $zone = $sys->getZones();
             $address = $sys->getAddress();
-            return view('liaison.assumptionLetter')->with('data', $query)
+            return view('liaison.attachmentPrint')->with('data', $query)
                 ->with('programme', $programme)
                 ->with('zone', $zone)
                 ->with('address', $address);
