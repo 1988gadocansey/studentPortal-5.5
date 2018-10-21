@@ -21,6 +21,7 @@
   | kernel and includes session state, CSRF protection, and more.
   |
  */
+Route::get('/printreceipt/{receiptno}', 'APIController@printreceipt');
 
 Route::get('liaison/form/attachment/print/{indexno}', 'APIController@printAttachmentForm')->where('indexno', '(.*)');
 Route::group(['middleware' => ['web']], function () {

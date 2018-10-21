@@ -52,10 +52,9 @@
                                      
                                      
                                      <th>INDEXNO</th>
-                                      <th data-priority="critical">NAME</th>
-                                      <th>PROGRAMME</th>
+
                                       <th>LEVEL</th> 
-                                      <th>SEMESTER</th>
+
                                       <th>YEAR</th>
                                       <th>BANK</th>
                                       <th>PAYMENT DETAILS</th>
@@ -63,6 +62,7 @@
                                       <th>RECEIPT N<u>O</u></th>
                                       <th>AMOUNT</th>
                                       <th>BANK DATE</th>
+                                            <th>ACTION</th>
                                      
                                     </thead>
                                     <tbody>
@@ -76,9 +76,8 @@
                                             <td> {{ $transaction->perPage()*($transaction->currentPage()-1)+($index+1) }} </td>
                                               <td> {{ @$row->INDEXNO }}</td>
 
-                                            <td>{!! @$row->student->programme->PROGRAMME!!}</td>
                                             <td> {{ @$row->LEVEL }}</td>
-                                            <td> {{ @$row->SEMESTER }}</td>
+
                                              <td> {{ @$row->YEAR }}</td>
                                             <td> {{ @$row->bank->NAME }}</td>
                                             <td> {{ @$row->PAYMENTTYPE }}</td>
@@ -86,6 +85,15 @@
                                             <td> {{ @$row->RECEIPTNO }}</td>
                                             <td> {{ @$row->AMOUNT }}</td>
                                             <td> {{ @$row->TRANSDATE }}</td>
+
+                                            <td>
+                                                @if($year==@$row->YEAR)
+                                                <a onclick="return MM_openBrWindow('{{url("printreceipt/" . trim(@$row->RECEIPTNO))}}', 'mark', 'width=800,height=500')" ><i title='Click to print receipt of this payment .. please allow popups on browser' class="md-icon material-icons">book</i></a>
+                                            @else
+                                               <b>Contact Finance for old receipts</b>
+                                                @endif
+
+                                            </td>
                                             
                                               
                                         </tr>
@@ -95,9 +103,9 @@
                              </table>
             @inject('sys', 'App\Http\Controllers\SystemController')
            
-          <div style="margin-left: 1190px" class="uk-text-bold uk-text-danger"><td colspan=" ">Total Paid GHC  {{ @$sys->formatMoney(@array_sum($total)) }}</td></div>
+       {{--   <div style="margin-left: 1190px" class="uk-text-bold uk-text-danger"><td colspan=" ">Total Paid GHC  {{ @$sys->formatMoney(@array_sum($total)) }}</td></div>
           <hr>
-
+--}}
        
 
     

@@ -18,11 +18,11 @@ class FeePaymentModel extends Model
     protected $primaryKey="ID";
     protected $guarded = ['ID'];
     public $timestamps = false;
-   public function student(){
+   public function students(){
         return $this->belongsTo('App\Models\StudentModel', "student","ID");
     }
      public function bank(){
-        return $this->belongsTo('App\Models\BankModel', "BANK","ID");
+        return $this->belongsTo('App\Models\BankModel', "BANK","ACCOUNT_NUMBER");
     }
      
      
