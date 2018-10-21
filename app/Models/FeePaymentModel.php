@@ -19,7 +19,7 @@ class FeePaymentModel extends Model
     protected $guarded = ['ID'];
     public $timestamps = false;
    public function student(){
-        return $this->belongsTo('App\Models\StudentModel', "INDEXNO","INDEXNO");
+        return $this->belongsTo('App\Models\StudentModel', "student","ID");
     }
      public function bank(){
         return $this->belongsTo('App\Models\BankModel', "BANK","ID");

@@ -649,7 +649,7 @@
 
 
 
-
+                            <small>NB: Insist that this letter bears the signature of the head of Head, Industrial Liaison Office</small>
                         </div>
 
                     </div>
@@ -677,6 +677,8 @@
     <script type="text/javascript">
 
      window.print();
+
+     window.close();
 
 
     </script>

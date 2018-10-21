@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5
+class ComposerStaticInit63c37dc9d84369f83ab57087e9747f79
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -13,12 +13,12 @@ class ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        'e91d0dc994644828154ae2387ede1ca8' => __DIR__ . '/..' . '/spatie/string/src/string_functions.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        'e91d0dc994644828154ae2387ede1ca8' => __DIR__ . '/..' . '/spatie/string/src/string_functions.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'e23faeee409e941dc9b4c80386209c39' => __DIR__ . '/..' . '/laracasts/flash/src/Laracasts/Flash/functions.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '72b1e3f4a2af9b30b3f137b3ec2057fc' => __DIR__ . '/..' . '/spatie/laravel-activitylog/src/helpers.php',
@@ -563,6 +563,7 @@ class ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5
         'App\\Models\\FacultyModel' => __DIR__ . '/../..' . '/app/Models/FacultyModel.php',
         'App\\Models\\FeeModel' => __DIR__ . '/../..' . '/app/Models/FeeModel.php',
         'App\\Models\\FeePaymentModel' => __DIR__ . '/../..' . '/app/Models/FeePaymentModel.php',
+        'App\\Models\\LevelModel' => __DIR__ . '/../..' . '/app/Models/LevelModel.php',
         'App\\Models\\LiaisonModel' => __DIR__ . '/../..' . '/app/Models/LiaisonModel.php',
         'App\\Models\\MessagesModel' => __DIR__ . '/../..' . '/app/Models/MessagesModel.php',
         'App\\Models\\MountedCourseModel' => __DIR__ . '/../..' . '/app/Models/MountedCourseModel.php',
@@ -4922,11 +4923,11 @@ class ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit99f78eeafd4175d646e7f7a8ba7dc6a5::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit63c37dc9d84369f83ab57087e9747f79::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit63c37dc9d84369f83ab57087e9747f79::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit63c37dc9d84369f83ab57087e9747f79::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit63c37dc9d84369f83ab57087e9747f79::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit63c37dc9d84369f83ab57087e9747f79::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -197,7 +197,9 @@
                 <li class="uk-hidden-small"><a href='{!! url("/dashboard") !!}'><i class="material-icons">&#xE88A;</i><span>Home</span></a></li>
 
                 <li data-uk-dropdown class="uk-hidden-small">
-                    <a href="#">Quality Assurance</a>
+
+                    <a href="#"><i class="sidebar-menu-icon material-icons md-18">book</i><span>Quality Assurance</span></a>
+
                     <div class="uk-dropdown uk-dropdown-scrollable">
                         <ul class="uk-nav uk-nav-dropdown">
                              <li><a href='{!! url("lecturer/assessment") !!}'>Assess Lecturer</a></li>
@@ -206,7 +208,9 @@
                 </li>
                 
                 <li data-uk-dropdown class="uk-hidden-small">
-                    <a href="#">Industrial Liaison</a>
+
+                    <a href="#"><i class="sidebar-menu-icon material-icons md-18">book</i><span>Industrial Liaison</span></a>
+
                     <div class="uk-dropdown uk-dropdown-scrollable">
                         <ul class="uk-nav uk-nav-dropdown">
                             <li><a href='{!! url("/liaison/form/attachment") !!}'>Print attachment letter</a></li>
@@ -217,12 +221,11 @@
                 </li>
                 
                  <li data-uk-dropdown class="uk-hidden-small">
-                    <a href="#"><i class="sidebar-menu-icon material-icons md-18">view_list</i><span>View</span></a>
+                    <a href="#"><i class="sidebar-menu-icon material-icons md-18">book</i><span>Finance</span></a>
                     <div class="uk-dropdown uk-dropdown-scrollable">
                         <ul class="uk-nav uk-nav-dropdown">
-                            <li><a href='{!! url("/biodataUpdate") !!}'>My Profile</a></li>
-                            <li><a href='{!! url("/result/transcript/provisonal") !!}'>View Semester Results</a></li>
-                            <li><a href='{!! url("/statement_account") !!}'>Print Statement of accounts</a></li>
+
+                             <li><a href='{!! url("/statement_account") !!}'>Print Statement of accounts</a></li>
             
                          </ul>
                     </div>
@@ -253,7 +256,9 @@
                     <a href="#"><i class="sidebar-menu-icon material-icons md-18">lock</i><span>My Account</span></a>
                     <div class="uk-dropdown uk-dropdown-scrollable">
                         <ul class="uk-nav uk-nav-dropdown">
+                            <li><a href='{!! url("/biodataUpdate") !!}'>My Profile</a></li>
                             <li>
+
                                 <a href="{{ url('/logout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

@@ -196,13 +196,16 @@ class HomeController extends Controller
         $sem=$academicDetails[0]->SEMESTER;
         $year=$academicDetails[0]->YEAR;
        
-        $studentDetail=Models\StudentModel::query()->where('STATUS','In School')->orwhere('STATUS','Alumni')->orwhere('STATUS','Admitted')->where('INDEXNO',$student)->first();
+        $studentDetail=Models\StudentModel::query()->where('STATUS','In school')->orwhere('STATUS','Alumni')->orwhere('STATUS','Admitted')->where('INDEXNO',$student)->orWhere("STNO",$student)->first();
         
          
         $outstandingBill=@$sys->formatMoney($studentDetail->BILL_OWING);
         $SemesterBill=@$sys->formatMoney($studentDetail->BILLS);
           //Payment details
-        $paymentDetail=  Models\FeePaymentModel::query()->where('INDEXNO',$studentDetail->STNO)->orderBy('LEVEL','DESC')->orderBy('YEAR','DESC')->orderBy('SEMESTER','DESC')->get();
+        $paymentDetail=  Models\FeePaymentModel::query()->where('student',$studentDetail->ID)->orderBy('LEVEL','DESC')->orderBy('YEAR','DESC')->orderBy('SEMESTER','DESC')->get();
+
+        //dd($paymentDetail);
+
         return view("students.account_statement")->with("transaction", $paymentDetail)
                 ->with('balance', $outstandingBill)
                 ->with('semesterBill', $paymentDetail);

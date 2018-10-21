@@ -21,6 +21,8 @@
     </div>
 
     <h6 class="heading_c uk-margin-bottom">Industrial Liaison Assumption of duty form</h6>
+    <div style="float:right;"><a class="uk-button uk-button-success" href="{{url('/liaison/form/assumption/print')}}">Are you done? Click to Preview Form </a> </div>
+
     <div class="uk-width-xLarge-1-1">
         <div class="md-card">
             <div class="md-card-content" style="">
@@ -146,8 +148,16 @@
                                     <div class="parsley-row">
                                         <div class="uk-input-group">
 
-                                            <div class="md-input-wrapper md-input-filled"><label for="wizard_twitter">Date of duty :</label><input type="text" name="cdate" id="cdate" class="md-input cdate" data-uk-datepicker="{format:'DD/MM/YYYY'}" required="required"  v-model="cdate"  v-form-ctrl   ><span class="md-input-bar"></span></div>
-                                            <p class="uk-text-danger uk-text-small " v-if="updateForm.cdate.$error.required" >Date duty is required</p>
+                                            <div class="md-input-wrapper md-input-filled"><label for="wizard_twitter">Date of commencement :</label><input type="text" name="cdate" id="cdate" class="md-input cdate" data-uk-datepicker="{format:'DD/MM/YYYY'}" required="required"  v-model="cdate"  v-form-ctrl   ><span class="md-input-bar"></span></div>
+                                            <p class="uk-text-danger uk-text-small " v-if="updateForm.cdate.$error.required" >Date commencement is required</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="parsley-row">
+                                        <div class="uk-input-group">
+
+                                            <div class="md-input-wrapper md-input-filled"><label for="wizard_referer">Supervisor phoneNo:</label><input type="text" id="csphone" required="" name="csphone" class="md-input" data-parsley-type="digits" minlength="10"    maxlength="10"   pattern='^[0-9]{10}$'  v-model="csphone"  v-form-ctrl><span class="md-input-bar"></span></div>
+                                            <p  class=" uk-text-danger uk-text-small  "   v-if="updateForm.csphone.$invalid">Please enter a valid phone number of 10 digits</p>
                                         </div>
                                     </div>
 
@@ -166,13 +176,7 @@
 
                                     <div data-uk-grid-margin="" class="uk-grid uk-grid-width-medium-1-4 uk-grid-width-large-1-4">
 
-                                        <div class="parsley-row">
-                                            <div class="uk-input-group">
 
-                                                <div class="md-input-wrapper md-input-filled"><label for="wizard_referer">Supervisor phoneNo:</label><input type="text" id="csphone" name="csphone" class="md-input" data-parsley-type="digits" minlength="10"    maxlength="10"   pattern='^[0-9]{10}$'  v-model="csphone"  v-form-ctrl><span class="md-input-bar"></span></div>
-                                                <p  class=" uk-text-danger uk-text-small  "   v-if="updateForm.csphone.$invalid">Please enter a valid phone number of 10 digits</p>
-                                            </div>
-                                        </div>
                                         <div class="parsley-row">
                                             <div class="uk-input-group">
 
@@ -213,7 +217,7 @@
                                     </a>
                                 </li>
                                 <li class="button_finish "    aria-hidden="true"  v-show="updateForm.$valid && in_payment_section==true"  >
-                                    <input class="md-btn md-btn-primary uk-margin-small-top final" type="button" name="submit_order"  value="Submit"   v-on:click="submit_form"  />
+                                    <input class="md-btn md-btn-primary uk-margin-small-top finals" type="button" name="submit_order"  value="Submit"   v-on:click="submit_form"  />
                                 </li>
                             </ul>
                         </div>
@@ -317,9 +321,7 @@
                     })
 
                 },
-                submit_form : function(){
-                    return (function(modal){ modal = UIkit.modal.blockUI("<div class='uk-text-center'>Saving Data<br/><img class='uk-thumbnail uk-margin-top' src='{!! url('assets/img/spinners/spinner_success.gif')  !!}' /></div>"); setTimeout(function(){ modal.hide() }, 50000) })();
-                },
+
 
                 go_to_fill_form_section : function (event){
                     vm.$data.in_payment_section=false
@@ -330,7 +332,7 @@
     </script>
     <script>
         $(document).ready(function(){
-            $('.final').on('click', function(e){
+            $('.finals').on('click', function(e){
 
                 //alert($("#wizard_advanced_form").serialize());
 

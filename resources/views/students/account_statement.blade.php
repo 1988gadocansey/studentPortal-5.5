@@ -75,7 +75,7 @@
                                         <tr align="">
                                             <td> {{ $transaction->perPage()*($transaction->currentPage()-1)+($index+1) }} </td>
                                               <td> {{ @$row->INDEXNO }}</td>
-                                            <td> {{ @$row->student->NAME }}</td>
+
                                             <td>{!! @$row->student->programme->PROGRAMME!!}</td>
                                             <td> {{ @$row->LEVEL }}</td>
                                             <td> {{ @$row->SEMESTER }}</td>

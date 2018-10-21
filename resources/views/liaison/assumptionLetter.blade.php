@@ -24,11 +24,28 @@
             </table>
 
             <div id='letters'>
+                <?php
+
+                $studentLevel =  substr($data->level,0,1) ;
+                if($studentLevel==1){
+                    $studentLevel="Year 1";
+                }
+                elseif($studentLevel==2){
+                    $studentLevel="Year 2";
+                }
+                elseif($studentLevel==3){
+                    $studentLevel="Year 3";
+                }
+                elseif($studentLevel==4){
+                    $studentLevel="Year 4";
+                }
+
+                ?>
                 <p><h4>PARTICULARS OF STUDENT</h4></p>
                 <div style='text-align:justify;  '>Registration number: &nbsp; &nbsp; <b>  <?php echo $data->studentDetials->INDEXNO;?></b></div>
                 <div style="text-align:justify;  ">Name: &nbsp; &nbsp; <b><?php echo strtoupper($data->studentDetials->NAME);?> </b></div>
                 <div style='text-align:justify;  '>Programme:&nbsp; &nbsp; <b> <?php echo strtoupper( $data->studentDetials->programme->PROGRAMME); ?></b> </div>
-                <div style='text-align:justify;  '>Year of study:&nbsp; &nbsp; <b><?php echo strtoupper($data->level);?> </b></div>
+                <div style='text-align:justify;  '>Year of study:&nbsp; &nbsp; <b><?php echo strtoupper($studentLevel);?> </b></div>
 
 
                 <div style='text-align:justify;  '>Telephone number (mobile):&nbsp; &nbsp; <b><?php echo strtoupper($data->studentDetials->TELEPHONENO);?></b></div>
@@ -58,7 +75,8 @@
 
 
                     <p>
-                    <div align="left">  <table>
+                    <div align="left">
+                        <table>
                             <tr>
                                 <td> Company's Stamp and date  </td> &nbsp; &nbsp;&nbsp;
                                 <td>&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</td><td><img src="{{url("public/assets/img/stamp.jpg")}}" width="330" height="90"></td>
@@ -82,7 +100,7 @@
                     <p></p>
                     <div style='text-align:justify;  '><b>NB</b> This form must be completed and forwarded to the <b>Industrial Liaison Officer, Takoradi Technical University, Box 256, Takoradi</b>, by student concerned <b>within seven days</b> of assumption of duty.</div>
                     <p></p>
-                    <div style="  font-weight:bold; text-align:justify">OFFICE DIRECT LINE 03120-22643    &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;   EMAIL: liaison@ttu.edu.gh</div>
+                    <div style="  font-weight:bold; text-align:justify">OFFICE DIRECT LINE 03120-22643, 0202116116  &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;   EMAIL: liaison@ttu.edu.gh</div>
 
                     </p>
 
@@ -119,7 +137,7 @@
 
         window.print();
 
-
+        window.close();
     </script>
 
 @endsection

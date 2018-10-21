@@ -8,7 +8,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class AssumptionDutyModel extends Model
 {
-    use LogsActivity;
+    //use LogsActivity;
     //
     /**
      * The database table used by the model.

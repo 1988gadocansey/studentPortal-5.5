@@ -83,7 +83,7 @@ class LiaisonAssumptionController extends Controller
         $csphone = $request->input('csphone');
         $ctown = $request->input('ctown');
 
-        $checkQuery = Models\LiaisonModel::where("indexno", $indexno)
+        $checkQuery = Models\AssumptionDutyModel::where("indexno", $indexno)
             ->where("year", $year)->first();
         if (empty($checkQuery)) {
             $data = new Models\AssumptionDutyModel();

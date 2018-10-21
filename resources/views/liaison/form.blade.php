@@ -19,8 +19,9 @@
 
 
     </div>
-
+    <div style="float:right;"><a class="uk-button uk-button-success" href="{{url('/liaison/form/attachment/print')}}">Are you done? Click to Preview Form </a> </div>
     <h6 class="heading_c uk-margin-bottom">Industrial Liaison Attachment</h6>
+
     <div class="uk-width-xLarge-1-1">
         <div class="md-card">
             <div class="md-card-content" style="">
