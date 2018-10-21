@@ -26,6 +26,7 @@
             <div id='letters'>
                 <?php
 
+
                 $studentLevel =  substr($data->level,0,1) ;
                 if($studentLevel==1){
                     $studentLevel="Year 1";

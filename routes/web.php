@@ -24,6 +24,7 @@
 Route::get('/printreceipt/{receiptno}', 'APIController@printreceipt');
 
 Route::get('liaison/form/attachment/print/{indexno}', 'APIController@printAttachmentForm')->where('indexno', '(.*)');
+Route::get('/liaison/form/assumption/print/{indexno}', 'APIController@printAssumptionForm')->where('indexno', '(.*)');
 Route::group(['middleware' => ['web']], function () {
     Auth::routes();
     Route::get('/', function () {

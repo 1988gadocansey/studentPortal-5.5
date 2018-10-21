@@ -80,7 +80,7 @@
 
                                 <?php
                                 //variable declaraions
-                                $programmename = $data->studentDetials->PROGRAMMECODE;
+                                $programmename = @$data->studentDetials->PROGRAMMECODE;
                                 $level = substr($data->level,0,1);
                                 $studentLevel =  substr($data->level,0,1) ;
                                 if($studentLevel==1){

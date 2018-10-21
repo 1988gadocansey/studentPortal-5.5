@@ -192,5 +192,32 @@ class APIController extends Controller
         }
     }
 
+    public function printAssumptionForm(Request $request, SystemController $sys,$indexno)
+    {
+        $studentSessionId = $indexno;
+        $array = $sys->getSemYear();
+        $sem = $array[0]->SEMESTER;
+        $year = $array[0]->YEAR;
+
+        $status = $array[0]->LIAISON;
+        if ($status == 1) {
+
+            // make sure only students who are currently in school can update their data
+            $query = Models\AssumptionDutyModel::where('indexno', $studentSessionId)->where('year', $year)->first();
+
+            $programme = $sys->getProgramList();
+            $zone = $sys->getZones();
+            $address = $sys->getAddress();
+            return view('liaison.assumptionLetter')->with('data', $query)
+                ->with('programme', $programme)
+                ->with('zone', $zone)
+                ->with('address', $address);
+
+        } else {
+            return redirect("/dashboard")->with("error", "Attachment form has been closed.Please contact Industrial Liaison Office");
+
+        }
+    }
+
 
 }
