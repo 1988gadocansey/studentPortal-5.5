@@ -494,7 +494,7 @@ class CourseController extends Controller
                         return redirect('lecturer/assessment');
                     }
                 }
-                if ($paid >= 0.5*$bill or $studentRecords->PROTOCOL == '1') {
+                if (($studentRecords->LEVEL == '100BTT'&& $paid >= 0.1*$bill ) ||($paid >= 0.5*$bill || $studentRecords->PROTOCOL == '1')) {
                         return view('courses.register')
                             ->with('year', $year)
                             ->with('sem', $sem)

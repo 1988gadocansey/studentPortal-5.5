@@ -75,7 +75,7 @@
                                         <tr align="">
                                             <td> {{ $transaction->perPage()*($transaction->currentPage()-1)+($index+1) }} </td>
                                               <td> {{ @$row->INDEXNO }}</td>
-
+                                               
                                             <td> {{ @$row->LEVEL }}</td>
 
                                              <td> {{ @$row->YEAR }}</td>

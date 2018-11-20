@@ -56,8 +56,10 @@ class LiaisonController extends Controller
     {
         $this->validate($request, [
             'cname' => 'required',
+            'clocation' => 'required',
 
             'caddress' => 'required',
+            'term' => 'required'
 
 
         ]);
@@ -86,6 +88,7 @@ class LiaisonController extends Controller
             $data->company_name = ucwords($cname);
 
             $data->company_address = ucwords($caddress);
+            $data->company_location = ucwords($clocation);
 
             $data->company_email = ucwords($cemail);
             $data->company_address_to = ucwords($cto);
@@ -107,6 +110,7 @@ class LiaisonController extends Controller
                     "company_address_to" => ucwords($cto),
                     "company_email" => ucwords($cemail),
                     "company_address" => ucwords($caddress),
+                    "company_location" => ucwords($clocation),
 
 
                 ));

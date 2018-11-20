@@ -221,7 +221,7 @@
                     <div class="uk-clearfix md-card-overlay-header">
                         <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
                         <h3 class="uk-text-center uk-text-upper">
-                            LIAISON PORTAL
+                          ATTACHMENT LETTER
                         </h3>
                     </div>
                     <p>Click to print attachment form</p>

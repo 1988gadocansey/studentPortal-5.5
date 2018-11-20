@@ -86,12 +86,11 @@
 
                                             <label for="">Company Zone :</label>
                                             <div class="md-input-wrapper md-input-filled">
-                                                {!!   Form::select('czone',$zone,array("required"=>"required","class"=>"md-input","id"=>"czone","v-model"=>"czone","v-form-ctrl"=>"","style"=>"width: 226px;","v-select"=>"czone")   )  !!}
+                                                {!!   Form::select('czone',$zone,array("class"=>"md-input","id"=>"czone","v-form-ctrl"=>"","style"=>"width: 226px;","v-select"=>"czone")   )  !!}
 
                                                 <span class="md-input-bar"></span>
                                             </div>
-                                            <p class="uk-text-danger uk-text-small"  v-if="updateForm.czone.$error.required">Zone is required</p>
-                                        </div>
+                                           </div>
                                     </div>
 
                                 </div>
