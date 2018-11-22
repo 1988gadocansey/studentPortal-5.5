@@ -215,7 +215,28 @@
                         <ul class="uk-nav uk-nav-dropdown">
                             <li><a href='{!! url("/liaison/form/attachment") !!}'>Print attachment letter</a></li>
                             <li><a href='{!! url("/liaison/form/assumption") !!}'>Assumption of duty form</a></li>
+                            <?php
 
+                            $programmes=["HID","HDT","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS"];
+                            $studentLevel =  substr(Auth::user()->level,0,1) ;
+                            if($studentLevel==1){
+                                $studentLevel="Year 1";
+                            }
+                            elseif($studentLevel==2){
+                                $studentLevel="Year 2";
+                            }
+                            elseif($studentLevel==3){
+                                $studentLevel="Year 3";
+                            }
+                            elseif($studentLevel==4){
+                                $studentLevel="Year 4";
+                            }
+                            ?>
+
+                            @if(in_array(Auth::user()->programme,$programmes)  && $studentLevel=="Year 2")
+
+                            <li><a href='{!! url("/liaison/form/semester/out/fill") !!}'>Print semester out form</a></li>
+                            @endif
                          </ul>
                     </div>
                 </li>

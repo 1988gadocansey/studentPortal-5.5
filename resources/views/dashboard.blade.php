@@ -232,7 +232,7 @@
         </div>
 
         <div>
-            <a href="{{url('/lecturer/assessment')}}">
+            <a href="{{url('/liaison/form/assumption')}}">
             <div class="md-card md-card-hover md-card-overlay">
                 <div class="md-card-content">
                      <img src="{{url('public/dashboard/results.png')}}"/>
@@ -250,6 +250,46 @@
             </div>
             </a>
         </div>
+        <?php
+
+            $programmes=["HID","HDT","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS"];
+        $studentLevel =  substr(Auth::user()->level,0,1) ;
+        if($studentLevel==1){
+            $studentLevel="Year 1";
+        }
+        elseif($studentLevel==2){
+            $studentLevel="Year 2";
+        }
+        elseif($studentLevel==3){
+            $studentLevel="Year 3";
+        }
+        elseif($studentLevel==4){
+            $studentLevel="Year 4";
+        }
+        ?>
+
+        @if(in_array(Auth::user()->programme,$programmes)  && $studentLevel=="Year 2")
+        <div>
+            <a href="{{url('/liaison/form/semester/out/fill')}}">
+                <div class="md-card md-card-hover md-card-overlay">
+                    <div class="md-card-content">
+                        <img src="{{url('public/dashboard/results.png')}}"/>
+                    </div>
+                    <div class="md-card-overlay-content">
+                        <div class="uk-clearfix md-card-overlay-header">
+                            <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                            <h3 class="uk-text-center uk-text-upper">
+                                PRINT SEMESTER OUT LETTER
+                            </h3>
+                        </div>
+                        <p>Click to print semester out letter</p>
+                        <a href="{{url('/liaison/form/semester/out/fill')}}" class="md-btn md-btn-primary">Click to go</a>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        @endif
 
 
 

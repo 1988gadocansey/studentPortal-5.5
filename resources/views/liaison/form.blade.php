@@ -48,7 +48,6 @@
                             </ul>
                         </div>
                         <div class=" clearfix " style="box-sizing: border-box;display: block;padding:15px!important;position: relative;">
-
                             <!-- first section -->
                             {{-- <h3 id="wizard_advanced-h-0" tabindex="-1" class="title current">Fill Form</h3> --}}
                             <section id="fill_form_section" role="tabpanel" aria-labelledby="fill form section" class="body step-0 current" data-step="0" aria-hidden="false"   v-bind:class="{'uk-hidden': in_payment_section} ">
@@ -94,11 +93,11 @@
                                     </div>
 
                                 </div>--}}
-
+                                </div>
                                 <div data-uk-grid-margin="" class="uk-grid uk-grid-width-medium-1-4 uk-grid-width-large-1-4">
 
 
-                                     <div class="parsley-row">
+                                    <div class="parsley-row">
                                         <div class="uk-input-group">
 
                                             <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Company Exact Location :</label><input type="text" id="clocation" name="clocation"  required=""v-form-ctrl  class="md-input"    v-model="clocation"      /><span class="md-input-bar"></span></div>
@@ -114,14 +113,14 @@
 
                                         </div>
                                     </div>
-                                  {{--  <div class="parsley-row">
-                                        <div class="uk-input-group">
+                                    {{--  <div class="parsley-row">
+                                          <div class="uk-input-group">
 
-                                            <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Company Supervisor :</label><input type="text" id="csuper" name="csuper"  required=""v-form-ctrl  class="md-input"    v-model="csuper"      /><span class="md-input-bar"></span></div>
-                                            <p class="uk-text-danger uk-text-small " v-if="updateForm.csuper.$error.required" >Company supervisor is required</p>
+                                              <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Company Supervisor :</label><input type="text" id="csuper" name="csuper"  required=""v-form-ctrl  class="md-input"    v-model="csuper"      /><span class="md-input-bar"></span></div>
+                                              <p class="uk-text-danger uk-text-small " v-if="updateForm.csuper.$error.required" >Company supervisor is required</p>
 
-                                        </div>
-                                    </div>--}}
+                                          </div>
+                                      </div>--}}
 
                                     <div class="parsley-row">
                                         <div class="uk-input-group">
@@ -136,16 +135,14 @@
                                         </div>
                                     </div>
 
-                                   {{-- <div class="parsley-row">
-                                        <div class="uk-input-group">
+                                    {{-- <div class="parsley-row">
+                                         <div class="uk-input-group">
 
-                                            <div class="md-input-wrapper md-input-filled"><label for="wizard_twitter">Date of duty :</label><input type="text" name="cdate" id="cdate" class="md-input cdate" data-uk-datepicker="{format:'DD/MM/YYYY'}" required="required"  v-model="cdate"  v-form-ctrl   ><span class="md-input-bar"></span></div>
-                                            <p class="uk-text-danger uk-text-small " v-if="updateForm.cdate.$error.required" >Date duty is required</p>
-                                        </div>
-                                    </div>--}}
-
+                                             <div class="md-input-wrapper md-input-filled"><label for="wizard_twitter">Date of duty :</label><input type="text" name="cdate" id="cdate" class="md-input cdate" data-uk-datepicker="{format:'DD/MM/YYYY'}" required="required"  v-model="cdate"  v-form-ctrl   ><span class="md-input-bar"></span></div>
+                                             <p class="uk-text-danger uk-text-small " v-if="updateForm.cdate.$error.required" >Date duty is required</p>
+                                         </div>
+                                     </div>--}}
                                 </div>
-
 
 
 

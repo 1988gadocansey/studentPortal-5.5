@@ -35,11 +35,7 @@
 
 <body class="blue-grey">
 <!-- Start Page Loading -->
-<div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-</div>
+ 
 <!-- End Page Loading -->
 <div>
     <!-- if there are login errors, show them here -->

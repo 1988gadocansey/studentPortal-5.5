@@ -48,6 +48,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/liaison/form/attachment', 'LiaisonController@showForm');
     Route::post('/liaison_attachment', 'LiaisonController@processForm');
     Route::get('/liaison/form/attachment/print', 'LiaisonController@printAttachmentForm');
+    Route::get('/liaison/form/semester/out/fill', 'LiaisonController@showSemesterOutForm');
+    Route::post('/liaison_form_semester_saved', 'LiaisonController@processSemesterOutForm');
+    Route::get('/liaison/form/semester/out/print', 'LiaisonController@printSemesterOut');
 
 
     Route::get('/liaison/form/assumption', 'LiaisonAssumptionController@showForm');
