@@ -90,19 +90,19 @@
                                 <div class="parsley-row">
                                     <div class="uk-input-group">
 
-                                        <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Company Exact Location :</label><input type="text" id="clocation" name="clocation"  required=""v-form-ctrl  class="md-input"    v-model="clocation"      /><span class="md-input-bar"></span></div>
+                                        <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Town/City :</label><input type="text" id="clocation" name="clocation"  required=""v-form-ctrl  class="md-input"    v-model="clocation"      /><span class="md-input-bar"></span></div>
                                         <p class="uk-text-danger uk-text-small " v-if="updateForm.clocation.$error.required" >Location   is required</p>
 
                                     </div>
                                 </div>
-                                <div class="parsley-row">
+                             {{--   <div class="parsley-row">
                                     <div class="uk-input-group">
 
                                         <div class="md-input-wrapper md-input-filled"><label for="wizard_skype">Company Address :</label><input type="text" id="caddress" name="caddress"  required=""v-form-ctrl  class="md-input"    v-model="caddress"      /><span class="md-input-bar"></span></div>
                                         <p class="uk-text-danger uk-text-small " v-if="updateForm.caddress.$error.required" >Home Address is required</p>
 
                                     </div>
-                                </div>
+                                </div>--}}
 
 
                             </div>

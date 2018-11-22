@@ -14,7 +14,7 @@
 
             <table>
                 <tr>
-                    <td><img style="width:1000px;height: auto" src='{{url("public/assets/img/liaison.png")}}'
+                    <td><img style="width:1000px;height: auto" src='{{url("public/assets/img/assumption.jpg")}}'
                              style="" class="image-responsive"/>
                     </td>
                 </tr>
@@ -29,16 +29,16 @@
 
                 $studentLevel =  substr($data->level,0,1) ;
                 if($studentLevel==1){
-                    $studentLevel="Year 1";
+                    $studentLevel="I";
                 }
                 elseif($studentLevel==2){
-                    $studentLevel="Year 2";
+                    $studentLevel="II";
                 }
                 elseif($studentLevel==3){
-                    $studentLevel="Year 3";
+                    $studentLevel="III";
                 }
                 elseif($studentLevel==4){
-                    $studentLevel="Year 4";
+                    $studentLevel="IV";
                 }
 
                 ?>
@@ -60,7 +60,12 @@
 
                 <div style='text-align:justify; '>Date of commencement of training: &nbsp; &nbsp;<?php
                     //$dob= $newDate = date("jS F\, Y", strtotime($_POST['date']));
-                    echo  strtoupper( date("jS F\, Y", strtotime($data->date_duty)));?></div>
+                    echo  $data->date_duty;
+
+
+                    ?>
+
+                </div>
                 <p><hr /></p><p></p>
                 <p><h3>PARTICULARS OF COMPANY/ORGANISATION</h3></p>
 

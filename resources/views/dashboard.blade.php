@@ -211,6 +211,12 @@
             </div>
             </a>
         </div>
+        <?php
+
+         $studentProgramme =  substr(Auth::user()->programme,0,1) ;
+
+         ?>
+        @if($studentProgramme=="H")
         <div>
             <a href="{{url('/liaison/form/attachment')}}">
             <div class="md-card md-card-hover md-card-overlay">
@@ -230,6 +236,7 @@
             </div>
             </a>
         </div>
+        @endif
 
         <div>
             <a href="{{url('/liaison/form/assumption')}}">
@@ -254,6 +261,8 @@
 
             $programmes=["HID","HDT","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS"];
         $studentLevel =  substr(Auth::user()->level,0,1) ;
+        $studentProgramme =  substr(Auth::user()->programme,0,1) ;
+
         if($studentLevel==1){
             $studentLevel="Year 1";
         }

@@ -58,7 +58,7 @@ class LiaisonController extends Controller
             'cname' => 'required',
             'clocation' => 'required',
 
-            'caddress' => 'required',
+
             'term' => 'required'
 
 
@@ -87,7 +87,7 @@ class LiaisonController extends Controller
             $data = new Models\LiaisonModel();
             $data->company_name = ucwords($cname);
 
-            $data->company_address = ucwords($caddress);
+            $data->company_address = "none";
             $data->company_location = ucwords($clocation);
 
             $data->company_email = ucwords($cemail);
@@ -192,7 +192,7 @@ class LiaisonController extends Controller
             'cname' => 'required',
             'clocation' => 'required',
 
-            'caddress' => 'required',
+
             'term' => 'required'
 
 

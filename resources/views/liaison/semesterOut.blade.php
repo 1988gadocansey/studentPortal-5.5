@@ -76,16 +76,16 @@
                                 $level = substr($data->level,0,1);
                                 $studentLevel =  substr($data->level,0,1) ;
                                 if($studentLevel==1){
-                                    $studentLevel="(Year 1)";
+                                    $studentLevel="I";
                                 }
                                 elseif($studentLevel==2){
-                                    $studentLevel="(Year 2)";
+                                    $studentLevel="II";
                                 }
                                 elseif($studentLevel==3){
-                                    $studentLevel="(Year 3)";
+                                    $studentLevel="III";
                                 }
                                 elseif($studentLevel==4){
-                                    $studentLevel="(Year 4)";
+                                    $studentLevel="IV";
                                 }
 
 
@@ -98,7 +98,7 @@
 
                                 TTU/ILO/IAP/VOL.2/12
                             </div>
-                            <div style='float:right;text-align:right; pluck;'><?php echo date('jS F, Y');  ?> </div>
+                            <div style='float:right;text-align:right; pluck;'><b><?php echo  strtoupper(date('jS F, Y'));  ?> </b></div>
                             <!-- <br> -->
                             <br>
 
@@ -106,8 +106,7 @@
                             <b><?php echo strtoupper($data->addressDetails->addresses); ?></b><br>
 
                             <b><?php echo strtoupper($data->company_name);?></b><br>
-                            <b><?php echo strtoupper($data->company_address);?></b><br>
-
+                            <b><?php echo strtoupper($data->company_address);?></b>
 
                             <b><?php echo strtoupper($data->company_location);?></b><br>
 
@@ -141,14 +140,14 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
 
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; '>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
 
@@ -167,18 +166,18 @@
                     ?>
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR COMPETENCY-BASED TRAINING(CBT) STUDENTS</h5></center>
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Civil Engineering, second year HND Civil Engineering students of the university are expected to undergo practical training in industry for a whole semester. </p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Civil Engineering, second year HND Civil Engineering students of the University are expected to undergo practical training in industry for a whole semester. </p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development in water, sanitation and construction industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>29th January -20th April, 2018</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>28thth January -20th April, 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
 
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
 
@@ -195,22 +194,23 @@
                     ?>
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR HND INTERIOR DESIGN AND TECHNOLOGY STUDENTS</h5></center>
-                    <div style='text-align:justify; font-size:20px;'>As part of the requirement for the award of the Higher National Diploma (HND) in Interior Design and Technology students of the university are expected to undergo practical training in industry for a whole semester. </div>
+                    <div >As part of the requirement for the award of the Higher National Diploma (HND) in Interior Design and Technology students of the University are expected to undergo practical training in industry for a whole semester. </div>
 
-                    <p style='text-align:justify; font-size:20px;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in interior design industry.</p>
+                    <p >It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in interior design industry.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>29th January - 20 April, 2018</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>28thth January - 20 April, 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
 
                     <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
                     <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
                     <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?>
+                    </p>
 
-                    <p style='text-align:justify; font-size:20px;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
+                    <p >We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
+                    <p >For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
 
                     <p style='text-align:justify;  '>We count on your usual co-operation.</p>
 
@@ -225,17 +225,17 @@
                     ?>
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR COMPETENCY-BASED TRAINING(CBT) STUDENTS</h5></center>
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Civil Engineering and Technology, second year HND Civil Engineering students of the university are expected to undergo practical training in industry for a whole semester. </p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Civil Engineering and Technology, second year HND Civil Engineering students of the University are expected to undergo practical training in industry for a whole semester. </p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development in interior design industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>29th January - 20 April,2018</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>28thth January - 20 April,2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p >The student's particulars are as follows: </p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
 
@@ -253,18 +253,18 @@
                     ?>
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR CONSTRUCTION ENGINEERING AND MANAGEMENT STUDENTS</h5></center>
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Construction Engineering and Management, second year students of the university are expected to undergo practical training in industry for one whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Construction Engineering and Management, second year students of the University are expected to undergo practical training in industry for one whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='pluck;'>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
 
@@ -283,18 +283,18 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN BUILDING TECHNOLOGY  </h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Building Technology  at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Building Technology  at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the building industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
                     <p style='text-align:justify; pluck;'>The student's particulars are as follows: </p>
                     <p style='pluck;'>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -311,18 +311,18 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN CIVIL ENGINEERING  </h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Civil Engineering at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Civil Engineering at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the Civil Engineering industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
                     <p style='text-align:justify; pluck;'>The student's particulars are as follows: </p>
                     <p style='pluck;'>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -339,18 +339,18 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN PROCUREMENT MANAGEMENT</h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Procurement Management programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Procurement Management programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in commerce.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='pluck;'>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -366,21 +366,21 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN TOURISM MANAGEMENT </h5></center>
 
-                    <p style='text-align:justify; font-size:20px;'>As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Tourism Management programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p >As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Tourism Management programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the Tourism industry.</p>
+                    <p >It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the Tourism industry.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her  internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her  internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p >The student's particulars are as follows: </p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
-                    <p style='text-align:justify; font-size:20px;'><p style='text-align:justify; font-size:20px;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
-                    <p style='text-align:justify; font-size:20px;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
-                    <p style='text-align:justify; font-size:20px;'>We count on your usual cooperation.</p>
+                    <p ><p >We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
+                    <p >For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
+                    <p >We count on your usual cooperation.</p>
 
 
                     <?php
@@ -393,18 +393,18 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN HOSPITALITY MANAGEMENT </h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Hospitality Management programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Hospitality Management programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the hospitality industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>29th January - 20 April, 2018</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>28thth January - 20 April, 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the managerial or supervisory related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -420,17 +420,17 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN SECRETARYSHIP AND MANAGEMENT STUDIES  </h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Secretaryship and Management Studies programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Secretaryship and Management Studies programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in Secretaryship.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p >The student's particulars are as follows: </p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
 
                     <p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
@@ -447,18 +447,18 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN INDUSTRIAL ARTS (GRAPHICS - ANIMATION OPTION)  </h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Arts programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Arts programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -474,19 +474,19 @@
 
                     <center> <p style=";" class="heading_b"><h5 >  PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN INDUSTRIAL ARTS (GRAPHICS - MULTIMEDIA OPTION)  </h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Art programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Art programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
 
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -502,19 +502,19 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN INDUSTRIAL ARTS (GRAPHICS - PRINT PRESS OPTION) </h5></center>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Art programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Art programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
 
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -530,19 +530,19 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN INDUSTRIAL ARTS (GRAPHICS - ADVERTISING OPTION) </h5></center></p>
 
-                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Art programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p style='text-align:justify; pluck;'>As part of the requirement for the award of the  Bachelor of Technology (B. Tech.) degree in Industrial Art programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
 
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
                     <p style='text-align:justify; pluck;'><p style='text-align:justify; pluck;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
                     <p style='text-align:justify; pluck;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
@@ -560,22 +560,22 @@
 
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN INDUSTRIAL ART (TEXTILES)</h5></p></center>
 
-                    <p style='text-align:justify; font-size:20px;'>As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Textiles programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p >As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Textiles programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the textiles industry.</p>
+                    <p >It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the textiles industry.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 28th January – 20th April 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
 
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
-                    <p style='text-align:justify; font-size:20px;'><p style='text-align:justify; font-size:20px;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
-                    <p style='text-align:justify; font-size:20px;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
-                    <p style='text-align:justify; font-size:20px;'>We count on your usual cooperation.</p>
+                    <p ><p >We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
+                    <p >For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
+                    <p >We count on your usual cooperation.</p>
 
 
                     <?php
@@ -589,22 +589,22 @@
 
                     <center> <p style=";" class="heading_b"><h5>PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR STUDENTS PURSUING BACHELOR OF TECHNOLOGY IN GRAPHIC DESIGN</h5></p></center>
 
-                    <p style='text-align:justify; font-size:20px;'>As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Graphic Design programme at Takoradi Technical University, students of the university are expected to undergo practical training in industry for a whole semester.</p>
+                    <p >As part of the requirement for the award of the  Bachelor of Technology (B.Tech.) degree in Graphic Design programme at Takoradi Technical University, students of the University are expected to undergo practical training in industry for a whole semester.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in graphic design industry.</p>
+                    <p >It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in graphic design industry.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>29th January - 20 April, 2018</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b>28thth January - 20 April, 2019</b>.</p>
 
-                    <p style='text-align:justify; font-size:20px;'>The student's particulars are as follows: </p>
+                    <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
-                    <p style='text-align:justify; font-size:20px;'><p style='text-align:justify; font-size:20px;'>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
-                    <p style='text-align:justify; font-size:20px;'>For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
-                    <p style='text-align:justify; font-size:20px;'>We count on your usual cooperation.</p>
+                    <p ><p >We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
+                    <p >For your information, all students at the University are covered by Group Personal Accident Insurance Policy.</p>
+                    <p >We count on your usual cooperation.</p>
 
 
                     <?php
@@ -624,14 +624,14 @@
 
                     <p style='text-align:justify; pluck;'>
                         It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technological development in industry and commerce.</p>
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>Monday, 28 January 2019 – 20th April 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 28th January – 20th April 2019</b>.</p>
                     <p style='text-align:justify; pluck;'> The student's particulars are as follows: </p>
 
 
-                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?></p>
-                    <p><b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?></p>
-                    <p><b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?></p>
-                    <p> <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?></p>
+                    <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
+                   <b> NAME:</b>  <?php echo strtoupper($data->studentDetials->NAME);?> <br/>
+                    <b>PROGRAMME: </b> <?php echo strtoupper($data->studentDetials->programme->PROGRAMME). "  ". $studentLevel;?><br/>
+                     <b>CONTACT NUMBER:</b>  <?php echo $data->studentDetials->TELEPHONENO;?><br/></p>
 
 
 

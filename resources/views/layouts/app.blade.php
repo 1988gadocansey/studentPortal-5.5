@@ -213,7 +213,14 @@
 
                     <div class="uk-dropdown uk-dropdown-scrollable">
                         <ul class="uk-nav uk-nav-dropdown">
+                            <?php
+
+                            $studentProgramme =  substr(Auth::user()->programme,0,1) ;
+
+                            ?>
+                            @if($studentProgramme=="H")
                             <li><a href='{!! url("/liaison/form/attachment") !!}'>Print attachment letter</a></li>
+                                @endif
                             <li><a href='{!! url("/liaison/form/assumption") !!}'>Assumption of duty form</a></li>
                             <?php
 
