@@ -9,7 +9,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
 
-            font-size: 12px;
+            font-size: 16px;
 
         }
 
@@ -174,7 +174,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development in water, sanitation and construction industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>29th January -20th April, 2018</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2019</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
 
@@ -232,7 +232,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development in interior design industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>29th January - 20 April,2018</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2019</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
@@ -627,7 +627,7 @@
 
                     <p style='text-align:justify; pluck;'>
                         It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technological development in industry and commerce.</p>
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>28th May - 4th August, 2018</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2019</b>.</p>
                     <p style='text-align:justify; pluck;'> The student's particulars are as follows: </p>
 
 

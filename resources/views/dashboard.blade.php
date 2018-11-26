@@ -259,7 +259,7 @@
         </div>
         <?php
 
-            $programmes=["HID","HDT","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS"];
+            $programmes=["HID","HIDE","HDT","HDTE","HCE","HCEE","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS"];
         $studentLevel =  substr(Auth::user()->level,0,1) ;
         $studentProgramme =  substr(Auth::user()->programme,0,1) ;
 
