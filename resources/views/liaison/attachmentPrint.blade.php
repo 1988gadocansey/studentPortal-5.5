@@ -9,13 +9,13 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
 
-            font-size: 16px;
-
+            font-size:14px;
+            line-height: 30px;
         }
 
         @media print {
 
-            .uk-grid, to {display: inline !important} s
+            .uk-grid, to {display: inline !important}
                                                       #page1	{page-break-before:always;}
             .condition	{page-break-before:always;}
             #page2	{page-break-before:always;}
@@ -71,7 +71,7 @@
 
 
 
-                <div class="invoice-address">
+                <div class="invoice-address" >
                     <div class="row">
                         <div class="col-md-5 col-sm-5">
                             <div style='pluck; text-align:right;'>
@@ -662,12 +662,12 @@
 
                 </div>
 
-                <div class="footer">
+               {{-- <div class="footer">
                     <img style="width:1000px;height: auto" src='{{url("public/assets/img/footer.jpg")}}' style=""
                          class="image-responsive"/>
 
 
-                </div>
+                </div>--}}
 
 
 

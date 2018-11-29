@@ -84,13 +84,32 @@ class QualityAssuranceController extends Controller
         $sem = $array[0]->SEMESTER;
         $year = $array[0]->YEAR;
 
+        $qualityYS=$array[0]->QA;
+        // dd($resultb);
+        $levelCalculateEnd = substr($level, 3);
+        $levelCalculateBegin = substr($level, 0,3);
+        $levelCalculate = ($levelCalculateBegin - 100).$levelCalculateEnd;
+        //dd($levelCalculateBeginPrevious);
+
+        $qualityYSa = explode(',',$qualityYS);
+        $qualityY = $qualityYSa[0];
+        $qualityS = $qualityYSa[1];
+        if ($qualityY == $year) {
+            $level2 = $level;
+        } else {
+            $level2 = $levelCalculate;
+        }
+        
+
         $status = $array[0]->QAOPEN;
         if ($status == 1) {
 
             // make sure only students who are currently in school can update their data
-            $query = Models\QAquestionModel::where('indexno', $studentSessionId)->where('academic_year', $year)->first();
+            $query = Models\QAquestionModel::where('indexno', $studentSessionId)->where('academic_year', $qualityY)->first();
 
-            $lecturers = $sys->getLectureListQA($programme, $level);
+            //var_dump($query);
+            $lecturers = $sys->getLectureListQA2($programme, $level2, $qualityY);
+            //dd($programme, $level2, $qualityY);
             $zone = $sys->getZones();
             $address = $sys->getAddress();
             return view('QA.lecture_course_selector')->with('data', $query)
@@ -99,7 +118,7 @@ class QualityAssuranceController extends Controller
                 ->with('level', $sys->getLevelList());
 
         } else {
-            return redirect("/dashboard")->with("error", "QA form has been closed.Please contact Quality Assurance OfIsIJJDDDDDDDDDDDDDDFFFfice");
+            return redirect("/dashboard")->with("error", "QA form has been closed.Please contact Quality Assurance Office");
 
         }
     }
@@ -107,8 +126,8 @@ class QualityAssuranceController extends Controller
     public function processStep1(Request $request)
     {
         $request->session()->put('lecturer', $request->lecturer);
-        $request->session()->put('course', $request->course);
-        $request->session()->put('level', $request->level);
+        //$request->session()->put('course', $request->course);
+        //$request->session()->put('level', $request->level);
 
         return redirect("lecturer/assessment/wizzad");
     }
@@ -116,19 +135,38 @@ class QualityAssuranceController extends Controller
     public function showFormWizzard(Request $request, SystemController $sys)
     {
 
+        //$lecturer = $request->session()->pull('lecturer');
+        
+        //dd($lecturer);
         //$request->session()->pull('course', 'default');
-
+        $level = @\Auth::user()->level;
         $studentSessionId = @\Auth::user()->username;
         $programme = @\Auth::user()->programme;
         $array = $sys->getSemYear();
         $sem = $array[0]->SEMESTER;
         $year = $array[0]->YEAR;
 
+         $qualityYS=$array[0]->QA;
+        // dd($resultb);
+        $levelCalculateEnd = substr($level, 3);
+        $levelCalculateBegin = substr($level, 0,3);
+        $levelCalculate = ($levelCalculateBegin - 100).$levelCalculateEnd;
+        //dd($levelCalculateBeginPrevious);
+
+        $qualityYSa = explode(',',$qualityYS);
+        $qualityY = $qualityYSa[0];
+        $qualityS = $qualityYSa[1];
+        if ($qualityY == $year) {
+            $level2 = $level;
+        } else {
+            $level2 = $levelCalculate;
+        }
+
         $status = $array[0]->QAOPEN;
         if ($status == 1) {
 
             // make sure only students who are currently in school can update their data
-            $query = Models\QAquestionModel::where('indexno', $studentSessionId)->where('academic_year', $year)->first();
+            $query = Models\QAquestionModel::where('indexno', $studentSessionId)->where('academic_year', $qualityY)->first();
 
 
             $zone = $sys->getZones();
@@ -137,7 +175,7 @@ class QualityAssuranceController extends Controller
                 ->with('level', $sys->getLevelList());
 
         } else {
-            return redirect("/dashboard")->with("error", "QA form has been closed.Please contact Industrial Liaison Office");
+            return redirect("/dashboard")->with("error", "QA form has been closed.");
 
         }
     }
@@ -158,7 +196,25 @@ class QualityAssuranceController extends Controller
 
 
         ]);
+        $level = @\Auth::user()->level;
         $array = $sys->getSemYear();
+        $year2 = $array[0]->YEAR;
+
+        $qualityYS=$array[0]->QA;
+        // dd($resultb);
+        $levelCalculateEnd = substr($level, 3);
+        $levelCalculateBegin = substr($level, 0,3);
+        $levelCalculate = ($levelCalculateBegin - 100).$levelCalculateEnd;
+        //dd($levelCalculateBeginPrevious);
+
+        $qualityYSa = explode(',',$qualityYS);
+        $qualityY = $qualityYSa[0];
+        $qualityS = $qualityYSa[1];
+        if ($qualityY == $year2) {
+            $level2 = $level;
+        } else {
+            $level2 = $levelCalculate;
+        }
 
         $qa = $array[0]->QA;
 
@@ -169,10 +225,14 @@ class QualityAssuranceController extends Controller
         $sem = $data[1];
 
         $program = @\Auth::user()->programme;
+
         $indexno = @\Auth::user()->username;
+        $level = $level2;
         $lecturer = $request->session()->pull('lecturer');
-        $course = $request->session()->pull('course');
-        $level = $request->session()->pull('level');
+        //
+        $course = $sys->getCourseByLecturer($qualityS,$level,$qualityY,$program,$lecturer);
+        
+        
 
 
 

@@ -9,13 +9,15 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
 
-            font-size: 12px;
+            font-size:13px;
+            line-height: 24px;
+
 
         }
 
         @media print {
 
-            .uk-grid, to {display: inline !important} s
+            .uk-grid, to {display: inline !important}
                                                       #page1	{page-break-before:always;}
             .condition	{page-break-before:always;}
             #page2	{page-break-before:always;}
@@ -55,7 +57,7 @@
             <div id="print">
 
 
-                <table border='0' style="margin-top: -59px">
+                <table border='0' style="margin-top: -78px">
                     <tr>
                         <td><img style="width:1000px;height: auto" src='{{url("public/assets/img/liaison.png")}}'
                                  style="" class="image-responsive"/>
@@ -65,7 +67,7 @@
 
                 </table>
 
-                <div class="invoice-address">
+                <div class="invoice-address" style="margin-top: -45px">
                     <div class="row">
                         <div class="col-md-5 col-sm-5">
                             <div style='pluck; text-align:right;'>
@@ -124,7 +126,7 @@
             <div class="body">
 
 
-                <div id='letter'><br><div style='text-align:left; pluck;'>Dear Sir/Madam,</div>
+                <div id='letter'><br><div style='text-align:left; margin-top: -27px'>Dear Sir/Madam,</div>
                     <!-- begin main Letter -->
                     <!-- starr from here  -->
 
@@ -135,7 +137,7 @@
 
                     ?>
 
-                    <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR FASHION DESIGN AND TECHNOLOGY STUDENTS</h5></center>
+                    <center> <p style="margin-top: -27px" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR FASHION DESIGN AND TECHNOLOGY STUDENTS</h5></center>
                     <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Fashion Design and Technology, second year students of the University are expected to undergo practical training in industry for one whole semester. </p>
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development.</p>
@@ -659,12 +661,12 @@
 
                 </div>
 
-                <div class="footer">
+          {{--   <div class="footer">
                     <img style="width:1000px;height: auto" src='{{url("public/assets/img/footer.jpg")}}' style=""
                          class="image-responsive"/>
 
 
-                </div>
+                </div>--}}
 
 
 

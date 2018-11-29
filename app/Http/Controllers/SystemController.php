@@ -347,6 +347,29 @@ class SystemController extends Controller
 
     }
 
+    public function getLectureListQA2($program,$level,$year) {
+
+        //$levels=["100H"=>"200H","200H"=>"300H","100BTT"=>"200BT","100NT"=>"200NT","500MT"=>"600MT"];
+        //$levels=["100H"=>"200H","200H"=>"300H","100BTT"=>"200BTT","100NT"=>"200NT","500MT"=>"600MT","100BT"=>"200BT"];
+
+        //$level=array_search($level,$levels);
+
+
+            $lecturer=  \DB::table('tpoly_mounted_courses')
+                ->join('tpoly_workers', function($join)
+                {
+                    $join->on('tpoly_mounted_courses.LECTURER','=','tpoly_workers.staffID');
+                })
+                ->where('tpoly_mounted_courses.COURSE_LEVEL',$level)
+                ->where('tpoly_mounted_courses.COURSE_YEAR',$year)
+                ->where('PROGRAMME',$program)
+
+            ->select('tpoly_workers.fullName', 'tpoly_workers.staffID')->distinct()->get();
+        return $lecturer;
+
+
+    }
+
     public function getLevelList() {
 
 
@@ -402,6 +425,20 @@ class SystemController extends Controller
                  
 
          return $lecturer[0]->LECTURER;
+
+       
+
+         
+
+    }
+
+    public function getCourseByLecturer($sem,$level,$year,$prog,$lect) {
+
+         $course= \DB::table('tpoly_mounted_courses')->where("COURSE_SEMESTER",$sem)->where("COURSE_LEVEL",$level)->where("COURSE_YEAR",$year)->where("PROGRAMME",$prog)->where("LECTURER",$lect) ->select('COURSE_CODE')->get();
+
+                 
+
+          return @$course[0]->COURSE_CODE;
 
        
 

@@ -192,7 +192,7 @@ class LiaisonController extends Controller
             'cname' => 'required',
             'clocation' => 'required',
 
-
+            
             'term' => 'required'
 
 
