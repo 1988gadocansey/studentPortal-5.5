@@ -3,16 +3,18 @@
     <style>
         @page {
             size: A4;
+
+            margin: 0.5cm;
+
         }
         body{
-            background-image:url("{{url('public/assets/img/background.jpgs') }}");
+            background-image:url("{{url('public/assets/img/background.jpgs')}}");
             background-repeat: no-repeat;
             background-attachment: fixed;
-
             font-size:13px;
-            line-height: 24px;
-
-
+        }
+        .address{
+            font-weight: bold;
         }
 
         @media print {
@@ -102,18 +104,15 @@
                             </div>
                             <div style='float:right;text-align:right; pluck;'><b><?php echo  strtoupper(date('jS F, Y'));  ?> </b></div>
                             <!-- <br> -->
-                            <br>
 
+                            <p class="address"><?php echo strtoupper($data->addressDetails->addresses); ?>
 
-                            <b><?php echo strtoupper($data->addressDetails->addresses); ?></b><br>
+                                <br/><?php echo strtoupper($data->company_name);?>
+                                <br/><?php echo strtoupper($data->company_address);?>
 
-                            <b><?php echo strtoupper($data->company_name);?></b><br>
-                            <b><?php echo strtoupper($data->company_address);?></b>
+                                <?php echo strtoupper($data->company_location);?>
 
-                            <b><?php echo strtoupper($data->company_location);?></b><br>
-
-
-                            <b></b>
+                            </p>
 
 
 
@@ -140,7 +139,7 @@
                     <center> <p style="margin-top: -27px" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR FASHION DESIGN AND TECHNOLOGY STUDENTS</h5></center>
                     <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Fashion Design and Technology, second year students of the University are expected to undergo practical training in industry for one whole semester. </p>
 
-                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development.</p>
+                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development.</p>
 
                     <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 28th January – 20th April, 2019</b>.</p>
 
@@ -170,7 +169,7 @@
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR COMPETENCY-BASED TRAINING(CBT) STUDENTS</h5></center>
                     <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Civil Engineering, second year HND Civil Engineering students of the University are expected to undergo practical training in industry for a whole semester. </p>
 
-                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development in water, sanitation and construction industry.</p>
+                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development in water, sanitation and construction industry.</p>
 
                     <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>28th January -20th April, 2019</b>.</p>
 
@@ -229,7 +228,7 @@
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR COMPETENCY-BASED TRAINING(CBT) STUDENTS</h5></center>
                     <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Civil Engineering and Technology, second year HND Civil Engineering students of the University are expected to undergo practical training in industry for a whole semester. </p>
 
-                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development in interior design industry.</p>
+                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development in civil engineering industry.</p>
 
                     <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>28th January - 20 April,2019</b>.</p>
 
@@ -257,7 +256,7 @@
                     <center> <p style=";" class="heading_b"><h5 >PRACTICAL INDUSTRIAL TRAINING  PROGRAMME FOR CONSTRUCTION ENGINEERING AND MANAGEMENT STUDENTS</h5></center>
                     <p style='text-align:justify; pluck;'>As part of the requirement for the award of the Higher National Diploma (HND) in Construction Engineering and Management, second year students of the University are expected to undergo practical training in industry for one whole semester.</p>
 
-                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technology development.</p>
+                    <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development.</p>
 
                     <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 28th January – 20th April, 2019</b>.</p>
 
@@ -625,7 +624,7 @@
                     <p style='text-align:justify; pluck;'>Students of Takoradi Technical University pursuing Higher National Diploma (HND)<?php //echo $help->getProgram($person[PROGRAMME]);?> are expected to undergo practical industrial training in industry as part of the requirements for the award of their certificate.</p>
 
                     <p style='text-align:justify; pluck;'>
-                        It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and aquaint themselves with current technological development in industry and commerce.</p>
+                        It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in industry and commerce.</p>
                     <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 28th January – 20th April, 2019</b>.</p>
                     <p style='text-align:justify; pluck;'> The student's particulars are as follows: </p>
 
@@ -656,17 +655,17 @@
 
 
 
-                        <small>NB: DO NOT ACCEPT THIS LETTER IF IT DOES NOT BEAR THE ORIGINAL SIGNATURE AND STAMP</small>
+                        <small><b>NB: DO NOT ACCEPT THIS LETTER IF IT DOES NOT BEAR THE ORIGINAL SIGNATURE AND STAMP</b></small>
                     </div>
 
                 </div>
 
-          {{--   <div class="footer">
+             <div class="footer">
                     <img style="width:1000px;height: auto" src='{{url("public/assets/img/footer.jpg")}}' style=""
                          class="image-responsive"/>
 
 
-                </div>--}}
+                </div>
 
 
 
