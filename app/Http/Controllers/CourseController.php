@@ -60,24 +60,24 @@ class CourseController extends Controller
             $semT=$array[0]->SEMESTER;
             $yearT=$array[0]->YEAR;
             if ($semT == 1) {
-                if ($qa == 0 &&( @$sql->LEVEL != '100H' && @$sql->LEVEL != '100NT' && @$sql->LEVEL != '500MT' && @$sql->LEVEL != '100BTT' && @$sql->LEVEL != '100BT')) {
+                if ($qa == 0 && $sql->STATUS != 'Alumni' && ( @$sql->LEVEL != '100H' && @$sql->LEVEL != '100NT' && @$sql->LEVEL != '500MT' && @$sql->LEVEL != '100BTT' && @$sql->LEVEL != '100BT')) {
                 return redirect('/lecturer/assessment');
             }
             if($sql->BALANCE>0){
-                if($sql->PAID<=0.99*$sql->BALANCE){
+                if($sql->PAID<=0.69*$sql->BALANCE){
                 return redirect('/dashboard')->with("error","check fee status");
             }//   if($sql->BALANCE>0){
             //    return redirect('/dashboard')->with("error","check fee status");
                             } 
             }
             elseif($semT == 2) {
-                if ($qa == 0) {
+                if ($qa == 0 && $sql->STATUS != 'Alumni') {
                 return redirect('/lecturer/assessment');
             }
                 if($sql->PAID<=0.99*$sql->BILLS){
                 return redirect('/dashboard')->with("error","check fee status");
             }
-             if ($regis == 0) {
+             if ($regis == 0 && $sql->STATUS != 'Alumni') {
                 return redirect('/course_registration');
             }
             }
@@ -141,7 +141,7 @@ class CourseController extends Controller
         $resultbasem = $resultba[1];//[\DB::raw("CONCAT(year,',',sem)"),'!=', $resultb],
 
 
-        $records=  Models\AcademicRecordsModel::where([['indexno','=',$sql],['grade','!=', 'E'],['grade','!=', 'IC'],['grade','!=', 'NC']])->groupBy("year")->groupBy("level")->orderBy("level")->get();
+        $records=  Models\AcademicRecordsModel::where('indexno','=',$sql)->where('grade','!=', 'E')->where('grade','!=', 'IC')->where('grade','!=', 'NC')->groupBy("year")->groupBy("level")->orderBy("level")->get();
         $programObject=Models\StudentModel::where('INDEXNO',$sql)->select("PROGRAMMECODE")->get();
         $program=$programObject[0]->PROGRAMMECODE;
         $rsaProgram = $sys->getProgramResult($program);
@@ -165,7 +165,7 @@ class CourseController extends Controller
                     $a=0;
                     foreach ($records as $row){
                         for($i=1;$i<3;$i++){
-                            $query=  Models\AcademicRecordsModel::where("indexno",$sql)->where("year",$row->year)->where("sem",$i)->where(\DB::raw("CONCAT(year,',',sem)"),'!=', $resultb)->orderby("code")->orderby("resit")->get()->toArray();
+                            $query=  Models\AcademicRecordsModel::where("indexno",$sql)->where('total','>',0)->where("year",$row->year)->where("sem",$i)->where(\DB::raw("CONCAT(year,',',sem)"),'!=', $resultb)->orderby("code")->orderby("resit")->get()->toArray();
 
 
                             if(count($query)>0){
@@ -182,7 +182,7 @@ class CourseController extends Controller
                                 ?>
 
                                 <div class="uk-overflow-container">
-                                <table style="margin-left:18px"  border="0" style="" width='826px'  class="uk-table uk-table-striped">
+                                <table style="margin-left:18px; background-image:url('https://www.ttuportal.com/srms/public/assets/img/transcriptUnverified.jpg')"  border="0" width='826px'  class="uk-table uk-table-striped">
                                     <thead >
                                     <tr class="uk-text-bold" style="background-color:#1A337E;color:white;">
                                         <td  width="86">CODE</td>
@@ -202,6 +202,13 @@ class CourseController extends Controller
                                             
                                             ?>
                                         <td align='center' width="57">GP</td>
+                                            <?php
+                                                }
+
+                                                if ($rsaProgram == 'RSA') {
+                                            ?>
+
+                                         <td align='center' width="50">GD</td>
                                             <?php
                                                 }
                                             ?>
@@ -242,7 +249,15 @@ class CourseController extends Controller
 
 
                                         <?php
-                                    }
+                                                }
+
+                                                if ($rsaProgram == 'RSA') {
+                                            ?>
+
+                                         <td align='center'><?php  if($rs['total']>0 && $rs['total'] < 49.5){ echo "NC";} elseif($rs['total']>49.4 && $rs['total'] < 59.5){ echo "C";} elseif($rs['total']>59.4 && $rs['total'] < 79.5){ echo "CM";} elseif($rs['total']>79.4 && $rs['total'] < 100.1){ echo "CD";} else{echo "IC";}?></td>
+                                            <?php
+                                                }
+                                            
                                         }
                                         }?>
                                     </tr>
@@ -287,6 +302,11 @@ class CourseController extends Controller
                                             ?>
                                         <td class="uk-text-bold" align='center'><?php echo $gpoint; ?>&nbsp;</td>
                                          <?php
+                                                }
+                                            if ($rsaProgram == 'RSA') {
+                                            ?>
+                                            <td>&nbsp</td>
+                                            <?php
                                                 }
                                             
                                             ?>
@@ -338,6 +358,11 @@ class CourseController extends Controller
                                             ?>
                                         <td class="uk-text-bold" align='center'><?php echo $totgpoint;   $b="";$a=""; ?>&nbsp;</td>
                                         <?php
+                                                }
+                                            if ($rsaProgram == 'RSA') {
+                                            ?>
+                                            <td>&nbsp</td>
+                                            <?php
                                                 }
                                             
                                             ?>
@@ -413,8 +438,9 @@ class CourseController extends Controller
                 <td class="uk-text-bold" style="">DATE OF BIRTH</td> <td style=""><?PHP echo  $student->DATEOFBIRTH ; ?></td>
             </tr>
             <tr>
-                <td class="uk-text-left" colspan="3">&nbsp;<br/>For HND only. &nbsp;&nbsp;Grade &nbsp;= &nbsp;Value, &nbsp;&nbsp;&nbsp;A+ &nbsp;= &nbsp;5.0, &nbsp;&nbsp;&nbsp;A &nbsp;= &nbsp;4.5, &nbsp;&nbsp;&nbsp;B+ &nbsp;= &nbsp;4.0, &nbsp;&nbsp;&nbsp;B &nbsp;= &nbsp;3.5, &nbsp;&nbsp;&nbsp;C+ &nbsp;= &nbsp;3, &nbsp;&nbsp;&nbsp;C &nbsp;= &nbsp;2.5, &nbsp;&nbsp;&nbsp;D+ &nbsp;= &nbsp;2, &nbsp;&nbsp;&nbsp;D &nbsp;= &nbsp;1.5, &nbsp;&nbsp;&nbsp;F &nbsp;= &nbsp;0, &nbsp;&nbsp;&nbsp;red asterisk means resit
-                </td>
+                <td class="uk-text-left" colspan="3"><br/>Red asterisk means resit result&nbsp;<br/><br/>For HND &nbsp;&nbsp;Grade &nbsp;= &nbsp;Value, &nbsp;&nbsp;&nbsp;A+ &nbsp;= &nbsp;5.0, &nbsp;&nbsp;&nbsp;A &nbsp;= &nbsp;4.5, &nbsp;&nbsp;&nbsp;B+ &nbsp;= &nbsp;4.0, &nbsp;&nbsp;&nbsp;B &nbsp;= &nbsp;3.5, &nbsp;&nbsp;&nbsp;C+ &nbsp;= &nbsp;3, &nbsp;&nbsp;&nbsp;C &nbsp;= &nbsp;2.5, &nbsp;&nbsp;&nbsp;D+ &nbsp;= &nbsp;2, &nbsp;&nbsp;&nbsp;D &nbsp;= &nbsp;1.5, &nbsp;&nbsp;&nbsp;F &nbsp;= &nbsp;0
+                                        <br/><br/>For CBT &nbsp;&nbsp;Grade &nbsp;= &nbsp;Meaning, &nbsp;&nbsp;&nbsp;CD &nbsp;= &nbsp;Competent With Distinction, &nbsp;&nbsp;&nbsp;CM &nbsp;= &nbsp;Competent With Merit, &nbsp;&nbsp;&nbsp;C &nbsp;= &nbsp;Competent, &nbsp;&nbsp;&nbsp;NC &nbsp;= &nbsp;Not Yet Competent
+                                    </td>
             </tr>
             <tr>
                 <td class="uk-text-left" colspan="3">&nbsp;
@@ -436,10 +462,16 @@ class CourseController extends Controller
     public function register(Request $request, SystemController $sys)
     {
 
+
+        if ($request->ip() != "45.222.202.6") {
+            return redirect("/dashboard")->with("error", "Please go to TPConnect to register");
+        }
         $student=@\Auth::user()->username;
         $array=$sys->getSemYear();
         $sem=$array[0]->SEMESTER;
         $year=$array[0]->YEAR;
+        $grad1 = substr($year, 0,4);
+        $grad2 = '';
 
         $status=$array[0]->STATUS;
 
@@ -466,7 +498,7 @@ class CourseController extends Controller
                     $studentStatus = @$studentRecords->STATUS;
                     $qa = @$studentRecords->QUALITY_ASSURANCE;
 
-
+                         
                     $studentDetail = @$studentRecords;
 
                     $courseCore = @Models\MountedCourseModel::query()->where('COURSE_SEMESTER', $sem)->where('COURSE_LEVEL', $studentDetail->LEVEL)->where('PROGRAMME', $studentDetail->PROGRAMMECODE)->where('COURSE_YEAR', $year)->where('COURSE_TYPE', 'Core')->groupBy('COURSE_CODE')->paginate(100);
@@ -494,7 +526,7 @@ class CourseController extends Controller
                         return redirect('lecturer/assessment');
                     }
                 }
-                if (($studentRecords->LEVEL == '100BTT'&& $paid >= 0.1*$bill ) ||($paid >= 0.5*$bill || $studentRecords->PROTOCOL == '1')) {
+                if (($studentRecords->LEVEL == '100BTT'&& $paid >= 0.1*$bill ) ||($paid >= 0.7*$bill || $studentRecords->PROTOCOL == '1')) {
                         return view('courses.register')
                             ->with('year', $year)
                             ->with('sem', $sem)
@@ -519,7 +551,7 @@ class CourseController extends Controller
                         return redirect('lecturer/assessment');
                     }
 
-                    if ($paid >= 0.99*$bill or $studentRecords->PROTOCOL == '1') {
+                    if ($paid > 0.99*$bill ) {// or $studentRecords->PROTOCOL == '1') {
                         return view('courses.register')
                             ->with('year', $year)
                             ->with('sem', $sem)
@@ -559,9 +591,31 @@ class CourseController extends Controller
                     $elective = $request->input('elective');
                     //dd($elective);
                     $level = $request->input('level');
+
+                    if ($level == '300H' || $level == '200NT' || $level == '200BTT' || $level == '400BT') {
+                $grad2 = $year;
+                //$level_year = 'final';
+            }
+            if ($level == '200H' || $level == '100NT' || $level == '100BTT' || $level == '300BT') {
+                $gradx = $grad1+1;
+                $grady = $grad1+2;
+                $grad2 = $gradx.'/'.$grady;
+            }
+            if ($level == '100H' || $level == '200BT') {
+               $gradx = $grad1+2;
+                $grady = $grad1+3;
+                $grad2 = $gradx.'/'.$grady;
+            }
+
+            if ($level == '100BT') {
+               $gradx = $grad1+3;
+                $grady = $grad1+4;
+                $grad2 = $gradx.'/'.$grady;
+            }
+
                     $credit = $request->input('credit');
                     $totalHours = $request->input('hours');
-                    $yeargroup = $request->input('yearGroup');
+                    $yeargroup = $grad2;//$request->input('yearGroup');
                     $studentID = $sys->getStudentIDfromIndexno($student);
 
                     @Models\AcademicRecordsModel::query()->where('student', $studentID)
@@ -600,9 +654,9 @@ class CourseController extends Controller
 
                         $newHours = @$oldHours->TOTAL_CREDIT_DONE + $totalHours;
 
-                        $leftHours = $durationCredit - $newHours;
+                        $leftHours = $durationCredit - $newHours; 
 
-                        Models\StudentModel::where('INDEXNO', $student)->update(array('TOTAL_CREDIT_DONE' => $newHours, 'STATUS' => 'In school', 'CREDIT_LEFT_COMPLETE' => $leftHours, 'REGISTERED' => '1'));
+                        Models\StudentModel::where('INDEXNO', $student)->update(array('TOTAL_CREDIT_DONE' => $newHours, 'STATUS' => 'In school', 'CREDIT_LEFT_COMPLETE' => $leftHours, 'GRADUATING_GROUP' => $yeargroup, 'REGISTERED' => '1'));
                         \DB::commit();
 
                     }
@@ -662,7 +716,7 @@ class CourseController extends Controller
 
                             $leftHours = $durationCredit - $newHours;
 
-                            Models\StudentModel::where('INDEXNO', $student)->update(array('TOTAL_CREDIT_DONE' => $newHours, 'CREDIT_LEFT_COMPLETE' => $leftHours, 'REGISTERED' => '1'));
+                            Models\StudentModel::where('INDEXNO', $student)->update(array('TOTAL_CREDIT_DONE' => $newHours, 'CREDIT_LEFT_COMPLETE' => $leftHours, 'REGISTERED' => '1', 'GRADUATING_GROUP' => $yeargroup));
 
                             \DB::commit();
 

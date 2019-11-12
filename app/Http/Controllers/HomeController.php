@@ -49,10 +49,10 @@ class HomeController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function index(SystemController $sys)
+    public function index(SystemController $sys, Request $request)
     {
         
-
+        dd($request);
     //$newIndex=$sys->assignIndex(@\Auth::user()->programme);
 //dd($newIndex);
         $lastVisit=\Carbon\Carbon::createFromTimeStamp(strtotime(@\Auth::user()->last_sign_in))->diffForHumans();

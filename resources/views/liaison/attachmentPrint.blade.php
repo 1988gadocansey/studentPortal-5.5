@@ -149,7 +149,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
 
@@ -179,7 +179,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development in water, sanitation and construction industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
 
@@ -207,7 +207,7 @@
 
                     <p >It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in interior design industry.</p>
 
-                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 3rd June - 10th August, 2019<</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 3rd June - 10th August, 2020<</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
 
@@ -237,7 +237,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development in interior design industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
@@ -265,7 +265,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technology development.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='pluck;'>
@@ -295,7 +295,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the building industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p style='text-align:justify; pluck;'>The student's particulars are as follows: </p>
                     <p style='pluck;'>
@@ -323,7 +323,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the Civil Engineering industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p style='text-align:justify; pluck;'>The student's particulars are as follows: </p>
                     <p style='pluck;'>
@@ -351,7 +351,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in commerce.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='pluck;'>
@@ -378,7 +378,7 @@
 
                     <p >It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the Tourism industry.</p>
 
-                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her  internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her  internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
@@ -405,7 +405,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the hospitality industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
@@ -432,7 +432,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in Secretaryship.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p><b>REGISTRATION NUMBER:</b>  <?php echo $data->studentDetials->INDEXNO;?> <br/>
@@ -459,7 +459,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
@@ -486,7 +486,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
@@ -514,7 +514,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
@@ -542,7 +542,7 @@
 
                     <p style='text-align:justify; pluck;'>It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the graphics industry.</p>
 
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
@@ -572,7 +572,7 @@
 
                     <p >It is believed that the internship programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in the textiles industry.</p>
 
-                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
 
@@ -601,7 +601,7 @@
 
                     <p >It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in graphic design industry.</p>
 
-                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2019<</b>.</p>
+                    <p >The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her internship in your organization from <b> 3rd June - 10th August, 2020<</b>.</p>
 
                     <p >The student's particulars are as follows: </p>
                     <p style='font-size:20px;'>
@@ -632,7 +632,7 @@
 
                     <p style='text-align:justify; pluck;'>
                         It is believed that the attachment programme would bring positive industrial exposure to students. This exercise would enable students to put theory into practice and acquaint themselves with current technological development in industry and commerce.</p>
-                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2019</b>.</p>
+                    <p style='text-align:justify; pluck;'>The University would, therefore, be grateful if you could consider the under-mentioned student to undertake his/her industrial attachment programme in your organization from <b>3rd June - 10th August, 2020</b>.</p>
                     <p style='text-align:justify; pluck;'> The student's particulars are as follows: </p>
 
 
@@ -643,8 +643,8 @@
 
 
 
-                    <p style='text-align:justify;  '>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.
-                        For your information, all students at the University are covered by Group Personal Accident Insurance policy.</p>
+                    <p style='text-align:justify;  '>We request that the student should be made to familiarize him/herself with all the related sections available in your organization.</p>
+                        <p>For your information, all students at the University are covered by Group Personal Accident Insurance policy.</p>
                     <p style='text-align:justify; pluck;'>We count on your usual cooperation.</p>
 
 

@@ -80,11 +80,20 @@
                         <tr>
                             <td align="left"><span class="uk-text-muted uk-text-small">Class</span></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            @if($checkRSA!="RSA")
                             <td align="left"><span class="uk-text-muted uk-text-small">CGPA</span></td>
+                            @else
+                            <td align="left"><span class="uk-text-muted uk-text-small">CPA</span></td>
+                            @endif
                         </tr>
                         <tr>
+                            @if($checkRSA!="RSA")
                             <td align="left"> <h3 class="uk-margin-remove"><span class="countUpMe">{{$class}}</h3></td>
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            @else
+                            <td align="left"> <h6 class="uk-margin-remove"><span class="countUpMe">{{$class}}</h6></td>
+                            <td>&nbsp;&nbsp;</td>
+                            @endif
                             <td align="left"> <h3 class="uk-margin-remove"><span class="countUpMe">{{$cgpa}}</h3></td>
                         </tr>
                         
@@ -145,7 +154,7 @@
 
 
 
-    <div class="uk-grid uk-grid-width-small-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-5 uk-text-center"
+    <div class="uk-grid uk-grid-width-small-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-6 uk-text-center"
          data-uk-grid-margin>
         <div>
             
@@ -153,19 +162,19 @@
                      <table  class="uk-table">
                         <tbody>
                         <tr style="background-color: #e0e7f5;">
-                            <td align="right"> Opening b/c: </td><td align="left"> GHc {{$balance}} </td>
+                            <td align="right"> Opening b/c:</td><td align="left">GHc{{$balance}}</td>
                         </tr>
                         <tr>
-                            <td align="right"> Fees ({{$year}}): </td><td align="left"> GHc {{$currentFees}} </td>
+                            <td align="right"> Fees {{$year}}:</td><td align="left">GHc{{$currentFees}}</td>
                         </tr>
                         <tr style="background-color: #e0e7f5;">
-                            <td align="right"> Total bill: </td><td align="left"> GHc {{$bill}} </td>
+                            <td align="right"> Total bill:</td><td align="left">GHc{{$bill}}</td>
                         </tr>
                         <tr>
-                            <td align="right"> Paid: </td><td align="left"> GHc {{$paid}} </td>
+                            <td align="right"> Paid:</td><td align="left">GHc{{$paid}}</td>
                         </tr>
                         <tr style="background-color: #e0e7f5;">
-                            <td align="right"> Outstanding b/c: </td><td align="left"> GHc {{$totalowe}} </td>
+                            <td align="right"> Outstanding b/c:</td><td align="left">GHc{{$totalowe}}</td>
                         </tr>
                     </tbody>
                     </table>
@@ -185,7 +194,7 @@
                     <div class="uk-clearfix md-card-overlay-header">
                         <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
                         <h3 class="uk-text-center uk-text-upper">
-                            RESULT CHECKER
+                            RESULTS
                         </h3>
                     </div>
                     click to view your provisional results here
@@ -203,7 +212,7 @@
                     <div class="uk-clearfix md-card-overlay-header">
                         <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
                         <h3 class="uk-text-center uk-text-upper uk-text-red">
-                            COURSE REGISTRATION
+                            REGISTRATION
                         </h3>
                     </div>
                     Click register this semester courses
@@ -216,7 +225,7 @@
          $studentProgramme =  substr(Auth::user()->programme,0,1) ;
 
          ?>
-        @if($studentProgramme=="H")
+        @if($studentProgramme!="B")
         <div>
             <a href="{{url('/liaison/form/attachment')}}">
             <div class="md-card md-card-hover md-card-overlay">
@@ -226,9 +235,9 @@
                 <div class="md-card-overlay-content">
                     <div class="uk-clearfix md-card-overlay-header">
                         <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
-                        <h3 class="uk-text-center uk-text-upper">
-                          ATTACHMENT LETTER
-                        </h3>
+                        <h4 class="uk-text-center uk-text-upper">
+                          ATTACHMENT FORM
+                        </h4>
                     </div>
                     <p>Click to print attachment form</p>
                     <a href="{{url('/liaison/form/attachment')}}" class="md-btn md-btn-primary">Click to go</a>
@@ -259,7 +268,8 @@
         </div>
         <?php
 
-            $programmes=["HID","HIDE","HDT","HDTE","HCE","HCEE","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS"];
+           // $programmes=["HID","HIDE","HDT","HDTE","HCE","HCEE","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS","BTBE","BTME"];
+            $programmes=["HCE","HCEE","HDT","HDTE","BTH","BTSMGTS","BTT","BTST","BTBE","BTCE","BTEE","BTP","BTBE","BTME"];
         $studentLevel =  substr(Auth::user()->level,0,1) ;
         $studentProgramme =  substr(Auth::user()->programme,0,1) ;
 
@@ -299,6 +309,55 @@
         </div>
 
         @endif
+        @if(Auth::user()->programme == "BTBE")
+
+            <div>
+                <a href="{{url('/liaison/form/semester/out/fill')}}">
+                    <div class="md-card md-card-hover md-card-overlay">
+                        <div class="md-card-content">
+                            <img src="{{url('public/dashboard/results.png')}}"/>
+                        </div>
+                        <div class="md-card-overlay-content">
+                            <div class="uk-clearfix md-card-overlay-header">
+                                <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                                <h3 class="uk-text-center uk-text-upper">
+                                    PRINT SEMESTER OUT LETTER
+                                </h3>
+                            </div>
+                            <p>Click to print semester out letter</p>
+                            <a href="{{url('/liaison/form/semester/out/fill')}}" class="md-btn md-btn-primary">Click to go</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+        @endif
+
+@if(Auth::user()->programme == "BTME")
+
+<div>
+<a href="{{url('/liaison/form/semester/out/fill')}}">
+<div class="md-card md-card-hover md-card-overlay">
+<div class="md-card-content">
+<img src="{{url('public/dashboard/results.png')}}"/>
+</div>
+<div class="md-card-overlay-content">
+<div class="uk-clearfix md-card-overlay-header">
+<i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+<h3 class="uk-text-center uk-text-upper">
+PRINT SEMESTER OUT LETTER
+</h3>
+</div>
+<p>Click to print semester out letter</p>
+<a href="{{url('/liaison/form/semester/out/fill')}}" class="md-btn md-btn-primary">Click to go</a>
+</div>
+</div>
+</a>
+</div>
+
+
+@endif
 
 
 
@@ -313,7 +372,7 @@
                     <div class="uk-clearfix md-card-overlay-header">
                         <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
                         <h3 class="uk-text-center uk-text-upper">
-                            LECTURER ASSESSMENT
+                            ASSESS LECTURER
                         </h3>
                     </div>
                     <p>Click to print lecturer assessment form</p>
@@ -536,5 +595,24 @@
 
     <!--  dashbord functions -->
     <script src="public/assets/js/pages/dashboard.min.js"></script>
+
+    <script type="text/javascript">
+ 
+    // setInterval(function(){
+
+    //    location.reload("true"); 
+    // }, 50000)
+// setInterval(function(){
+//     window.onload = function() {
+//     if(!window.location.hash) {
+//         window.location = window.location + '#loaded';
+        
+
+//         location.reload("true"); 
+     
+//     }
+// }
+// }, 50000)
+</script>
 
 @endsection

@@ -1,12 +1,53 @@
 @extends('layouts.printlayout')
 @section('style')
-     <style>
-         body{
-             font-size:16.5px;
-             line-height: 28px;
-         }
+<style>
+@page {
+size: A4;
+    
+margin: 0.5cm;
+    
+}
+body{
+    background-image:url("{{url('public/assets/img/background.jpgs')}}");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size:13px;
+}
+.address{
+    font-weight: bold;
+}
 
-     </style>
+@media print {
+    
+    .uk-grid, to {display: inline !important}
+    #page1    {page-break-before:always;}
+    .condition    {page-break-before:always;}
+    #page2    {page-break-before:always;}
+    .school    {page-break-before:always;}
+    .page9    {page-break-inside:avoid; page-break-after:auto}
+    a,
+a:visited {
+    text-decoration: underline;
+}
+    
+    
+    a[href]:after {
+    content: " (" attr(href) ")";
+    }
+    
+    abbr[title]:after {
+    content: " (" attr(title) ")";
+    }
+    
+    
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+    content: "";
+    }
+    .uk-grid, to {display: inline !important}
+    
+}
+</style>
 @endsection
 @section('content')
     @inject('help', 'App\Http\Controllers\SystemController')

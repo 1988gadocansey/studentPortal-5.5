@@ -27,7 +27,7 @@ class QualityAssuranceController extends Controller
 
     public function getLevel($level){
 
-        $levels=["100H"=>"200H","200H"=>"300H","100BTT"=>"200BTT","100NT"=>"200NT","500MT"=>"600MT","100BT"=>"200BT"];
+        $levels=["100H"=>"100H","200H"=>"200H","100BTT"=>"100BTT","100NT"=>"100NT","500MT"=>"500MT","100BT"=>"100BT","300H"=>"300H","200BTT"=>"200BTT","200NT"=>"200NT","600MT"=>"600MT","200BT"=>"200BT"];
         return array_search($level,$levels);
 
     }
@@ -89,7 +89,7 @@ class QualityAssuranceController extends Controller
         $levelCalculateEnd = substr($level, 3);
         $levelCalculateBegin = substr($level, 0,3);
         $levelCalculate = ($levelCalculateBegin - 100).$levelCalculateEnd;
-        //dd($levelCalculateBeginPrevious);
+        //dd($levelCalculateEnd, $levelCalculateBegin);
 
         $qualityYSa = explode(',',$qualityYS);
         $qualityY = $qualityYSa[0];
@@ -109,11 +109,13 @@ class QualityAssuranceController extends Controller
 
             //var_dump($query);
             $lecturers = $sys->getLectureListQA2($programme, $level2, $qualityY);
-            //dd($programme, $level2, $qualityY);
+            $amiampong = count($lecturers);
+            //dd($amiampong);
             $zone = $sys->getZones();
             $address = $sys->getAddress();
             return view('QA.lecture_course_selector')->with('data', $query)
                 ->with('lecturer', $lecturers)
+                ->with('amiampong', $amiampong)
                 ->with('years', $sys->years())
                 ->with('level', $sys->getLevelList());
 

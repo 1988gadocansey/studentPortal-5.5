@@ -224,7 +224,7 @@
                             <li><a href='{!! url("/liaison/form/assumption") !!}'>Assumption of duty form</a></li>
                             <?php
 
-                            $programmes=["HID","HDT","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS"];
+                            $programmes=["HID","HDT","BTH","BTSMGTS","BTIAG-ANIM","BTIAG-MULT","BTX - DP","BTT","BTST","BTBE","BTCE","BTEE","BTIAG-ADVT","BTIAG-ANIM","BTIAG-MULT","BTIAG-PRINT","BTX - FY","BTX - G","BTX - W","BTP","BTSMGTS","BTBE"];
                             $studentLevel =  substr(Auth::user()->level,0,1) ;
                             if($studentLevel==1){
                                 $studentLevel="Year 1";
@@ -244,6 +244,11 @@
 
                             <li><a href='{!! url("/liaison/form/semester/out/fill") !!}'>Print semester out form</a></li>
                             @endif
+
+                                @if(Auth::user()->programme == "BTBE")
+
+                                    <li><a href='{!! url("/liaison/form/semester/out/fill") !!}'>Print semester out form</a></li>
+                                @endif
                          </ul>
                     </div>
                 </li>
